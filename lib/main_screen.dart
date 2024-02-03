@@ -18,9 +18,7 @@ class MainScreen extends StatelessWidget {
               _navigateToTabsScreen(context);
             },
           ),
-          const Divider(
-            color: Colors.red,
-          ),
+          const Divider(),
           FilledButton(
             child: const Text("Online usage"),
             onPressed: () {
