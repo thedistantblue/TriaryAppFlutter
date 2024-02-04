@@ -1,8 +1,29 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:triary_app/data/data_base/base_cardio_training_repository.dart';
+import 'package:triary_app/data/data_base/base_power_training_repository.dart';
+import 'package:triary_app/data/data_base/uuid_generator.dart';
+import 'package:triary_app/data/data_mock/cardio_training_repository_mock.dart';
+import 'package:triary_app/data/data_mock/power_training_repository_mock.dart';
 import 'package:triary_app/main_screen.dart';
+import 'package:uuid/uuid.dart';
+import 'package:uuid/v4.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider<Uuid>(create: (_) => const Uuid()),
+      Provider<UuidGenerator>(create: (context) => UuidGenerator(context)),
+      Provider<BasePowerTrainingRepository>(
+        create: (context) => PowerTrainingRepositoryMock(context)),
+      Provider<BaseCardioTrainingRepository>(
+        create: (context) => CardioTrainingRepositoryMock(context),
+      )
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,17 +51,17 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: const ColorScheme(
-            brightness: Brightness.dark,
-            primary: Color(0xFF48CAA0),
-            onPrimary: Colors.black54,
-            secondary: Color(0xFF48CAA0),
-            onSecondary: Colors.black54,
-            error: Colors.red,
-            onError: Colors.black54,
-            background: Color(0xFF212730),
-            onBackground: Colors.grey,
-            surface: Color(0xFF373D46),
-            onSurface: Colors.grey,
+          brightness: Brightness.dark,
+          primary: Color(0xFF48CAA0),
+          onPrimary: Colors.black54,
+          secondary: Color(0xFF48CAA0),
+          onSecondary: Colors.black54,
+          error: Colors.red,
+          onError: Colors.black54,
+          background: Color(0xFF212730),
+          onBackground: Colors.grey,
+          surface: Color(0xFF373D46),
+          onSurface: Colors.grey,
         ),
         useMaterial3: true,
       ),
@@ -94,7 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme
+            .of(context)
+            .colorScheme
+            .inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -123,7 +147,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .headlineMedium,
             ),
           ],
         ),

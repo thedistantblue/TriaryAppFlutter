@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:triary_app/tabs/cardio_training_list.dart';
+import 'package:triary_app/tabs/power_training_list.dart';
 
 class TabsScreen extends StatelessWidget {
   const TabsScreen({super.key});
@@ -24,7 +26,10 @@ class TabsScreen extends StatelessWidget {
           title: const Text("TriaryApp"),
         ),
         body: const TabBarView(
-          children: [],
+          children: [
+            PowerTrainingList(),
+            CardioTrainingList(),
+          ],
         ),
       ),
     );
