@@ -34,16 +34,39 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
           child: ListView.builder(
             itemCount: _trainings.length,
             itemBuilder: (context, index) {
+              final training = _trainings[index];
               return SizedBox(
                 height: 100,
-                child: Card(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(_trainings[index].name),
-                      Text(_trainings[index].description),
-                    ],
+                child: Dismissible(
+                  key: Key(training.id),
+                  onDismissed: (direction) {},
+                  background: const Card(
+                    color: Colors.red,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.delete,
+                          size: 40,
+                          color: Color(0xffffffff),
+                        ),
+                      ],
+                    ),
+                  ),
+                  confirmDismiss: (a) {
+                    return Future.value(false);
+                  },
+                  direction: DismissDirection.startToEnd,
+                  child: SizedBox.expand(
+                    child: Card(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(training.name),
+                          Text(training.description),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               );
@@ -60,6 +83,8 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
       ),
     );
   }
+
+  void deleteTrainingDialog(BuildContext context) {}
 
   void createTrainingDialog(BuildContext context) {
     showDialog(
