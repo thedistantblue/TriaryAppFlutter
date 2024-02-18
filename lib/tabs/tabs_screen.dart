@@ -10,7 +10,7 @@ class TabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var powerTrainingRepository =
-      Provider.of<BasePowerTrainingRepository>(context);
+      Provider.of<BasePowerTrainingRepository>(context, listen: false);
 
     return DefaultTabController(
       length: 2,

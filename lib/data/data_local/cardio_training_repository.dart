@@ -1,13 +1,13 @@
-import 'package:flutter/widgets.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:triary_app/data/data_base/base_cardio_training_repository.dart';
+import 'package:triary_app/data/data_base/uuid_generator.dart';
 import 'package:triary_app/entity/training/cardio_training.dart';
 
 class CardioTrainingRepository extends BaseCardioTrainingRepository {
-  final BuildContext _buildContext;
+  final UuidGenerator _uuidGenerator;
   final Database _database;
 
-  CardioTrainingRepository(this._buildContext, this._database);
+  CardioTrainingRepository(this._uuidGenerator, this._database);
 
   @override
   CardioTraining create(CardioTraining training) {

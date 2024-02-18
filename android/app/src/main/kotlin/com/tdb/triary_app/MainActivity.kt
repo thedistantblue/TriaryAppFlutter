@@ -1,4 +1,4 @@
-package com.example.triary_app
+package com.tdb.triary_app
 
 import io.flutter.embedding.android.FlutterActivity
 

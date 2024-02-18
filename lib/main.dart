@@ -15,11 +15,26 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       Provider<Uuid>(create: (_) => const Uuid()),
-      Provider<UuidGenerator>(create: (context) => UuidGenerator(context)),
+      Provider<UuidGenerator>(
+          create: (context) =>
+              UuidGenerator(
+                  Provider.of<Uuid>(context, listen: false)
+              )
+      ),
       Provider<BasePowerTrainingRepository>(
-        create: (context) => PowerTrainingRepository(context, dataBase)),
+          create: (context) =>
+              PowerTrainingRepository(
+                  Provider.of<UuidGenerator>(context, listen: false),
+                  dataBase
+              )
+      ),
       Provider<BaseCardioTrainingRepository>(
-        create: (context) => CardioTrainingRepository(context, dataBase)),
+          create: (context) =>
+              CardioTrainingRepository(
+                  Provider.of<UuidGenerator>(context, listen: false),
+                  dataBase
+              )
+      ),
     ],
     child: const MyApp(),
   ));

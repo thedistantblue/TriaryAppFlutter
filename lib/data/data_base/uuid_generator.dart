@@ -1,14 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 class UuidGenerator {
 
-  final BuildContext _context;
+  final Uuid _uuid;
 
-  const UuidGenerator(this._context);
+  const UuidGenerator(this._uuid);
 
   String generateUuid() {
-    return Provider.of<Uuid>(_context, listen: false).v4();
+    return _uuid.v4();
   }
 }

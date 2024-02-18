@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
+import 'dart:convert';
+
 import 'package:sqflite/sqflite.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/data/data_base/repository_constants.dart';
@@ -7,17 +7,20 @@ import 'package:triary_app/data/data_base/uuid_generator.dart';
 import 'package:triary_app/entity/training/power_training.dart';
 
 class PowerTrainingRepository extends BasePowerTrainingRepository {
-  final BuildContext _buildContext;
+  final UuidGenerator _uuidGenerator;
   final Database _database;
 
-  PowerTrainingRepository(this._buildContext, this._database);
+  PowerTrainingRepository(this._uuidGenerator, this._database);
 
   @override
   PowerTraining create(PowerTraining training) {
-    training.id = Provider.of<UuidGenerator>(_buildContext, listen: false).generateUuid();
+    training.id = _uuidGenerator.generateUuid();
      _database.insert(
         powerTrainingRepositoryTable,
-        {'data': training.toJson()},
+        {
+          'id': training.id,
+          'data': jsonEncode(training.toJson())
+        },
         conflictAlgorithm: ConflictAlgorithm.replace
     );
      return training;
@@ -39,7 +42,10 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
   @override
   Future<Iterable<PowerTraining>> findAll() async {
     var result = await _database.query(powerTrainingRepositoryTable);
-    return result.map((map) => PowerTraining.fromJson(map));
+    var allData = result.map((e) {
+      return jsonDecode(e['data'] as String) as Map<String, dynamic>;
+    }).toList();
+    return allData.map((map) => PowerTraining.fromJson(map));
   }
 
   @override
