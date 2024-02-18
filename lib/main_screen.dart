@@ -31,12 +31,10 @@ class MainScreen extends StatelessWidget {
   }
 
   void _navigateToTabsScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const TabsScreen()));
+    Navigator.of(context).pushNamed("/tabs");
   }
 
   void _navigateToLoginScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
+    Navigator.of(context).pushNamed("/login");
   }
 }
