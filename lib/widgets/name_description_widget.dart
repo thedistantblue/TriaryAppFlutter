@@ -21,29 +21,37 @@ class NameDescriptionWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Name',
-              ),
-              controller: _nameEditingController,
-            ),
-            TextField(
-              obscureText: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Description',
-              ),
-              controller: _descriptionEditingController,
-            ),
-            const Spacer(),
-            FilledButton(
-              onPressed: () {
-                _createFunction((_name, _description));
-                Navigator.of(context).pop();
-              },
-              child: const Text('Create'),
+            Wrap(
+              direction: Axis.horizontal,
+              runSpacing: 10,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                TextField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Name',
+                  ),
+                  controller: _nameEditingController,
+                ),
+                TextField(
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Description',
+                  ),
+                  controller: _descriptionEditingController,
+                ),
+                Center(
+                  child: FilledButton(
+                    onPressed: () {
+                      _createFunction((_name, _description));
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Create'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

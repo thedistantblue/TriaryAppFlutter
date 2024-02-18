@@ -65,10 +65,17 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     showDialog(
       context: context,
       builder: (context) => Dialog(
-        child: NameDescriptionWidget(
-          createFunction: ((String, String) record) { createTraining(record);},
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SizedBox(
+            height: 250,
+            child: NameDescriptionWidget(
+              createFunction: ((String, String) record) {
+                createTraining(record);
+              },
+            ),
+          ),
         ),
-
       ),
     );
   }
