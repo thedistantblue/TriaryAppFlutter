@@ -21,6 +21,12 @@ class CardioTrainingRepositoryMock implements BaseCardioTrainingRepository {
   }
 
   @override
+  Future<Iterable<CardioTraining>> findAll() {
+    // TODO: implement findAll
+    throw UnimplementedError();
+  }
+
+  @override
   Future<Iterable<CardioTraining>> findAllById(Iterable<String> ids) {
     // TODO: implement findAllById
     throw UnimplementedError();

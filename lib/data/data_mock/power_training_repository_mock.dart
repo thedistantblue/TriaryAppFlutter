@@ -25,6 +25,12 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
   }
 
   @override
+  Future<Iterable<PowerTraining>> findAll() {
+    // TODO: implement findAll
+    throw UnimplementedError();
+  }
+
+  @override
   Future<Iterable<PowerTraining>> findAllById(Iterable<String> ids) {
     return Future.delayed(
       const Duration(milliseconds: 2),

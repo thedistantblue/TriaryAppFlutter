@@ -16,8 +16,14 @@ class CardioTrainingRepository extends BaseCardioTrainingRepository {
   }
 
   @override
-  Future<CardioTraining?> deleteById(String id) {
-    // TODO: implement deleteById
+  Future<CardioTraining?> findById(String id) {
+    // TODO: implement findById
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Iterable<CardioTraining>> findAll() async {
+    // TODO: implement findById
     throw UnimplementedError();
   }
 
@@ -28,8 +34,8 @@ class CardioTrainingRepository extends BaseCardioTrainingRepository {
   }
 
   @override
-  Future<CardioTraining?> findById(String id) {
-    // TODO: implement findById
+  void deleteById(String id) {
+    // TODO: implement deleteById
     throw UnimplementedError();
   }
 

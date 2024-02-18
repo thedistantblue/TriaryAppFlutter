@@ -1,7 +1,17 @@
-class PowerTraining {
-  late String id;
-  final String name, description;
+import 'package:json_annotation/json_annotation.dart';
 
+part 'power_training.g.dart';
+
+@JsonSerializable()
+class PowerTraining {
   PowerTraining(this.name, this.description);
 
+  late String id;
+  String name;
+  String description;
+
+  factory PowerTraining.fromJson(Map<String, dynamic> json) =>
+      _$PowerTrainingFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PowerTrainingToJson(this);
 }

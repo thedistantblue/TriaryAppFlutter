@@ -14,31 +14,51 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
 
   @override
   PowerTraining create(PowerTraining training) {
-    training.id = Provider.of<UuidGenerator>(_buildContext).generateUuid();
-    //  _database.insert(
-    //     powerTrainingRepositoryTable,
-    //     values,
-    //     conflictAlgorithm: ConflictAlgorithm.replace
-    // );
+    training.id = Provider.of<UuidGenerator>(_buildContext, listen: false).generateUuid();
+     _database.insert(
+        powerTrainingRepositoryTable,
+        {'data': training.toJson()},
+        conflictAlgorithm: ConflictAlgorithm.replace
+    );
      return training;
   }
 
   @override
-  Future<PowerTraining?> deleteById(String id) {
-    // TODO: implement deleteById
-    throw UnimplementedError();
+  Future<PowerTraining?> findById(String id) async {
+    var result = await _database.query(
+        powerTrainingRepositoryTable,
+        where: 'id = ?',
+        whereArgs: [id]
+    );
+    if (result.length > 1) {
+      throw Exception("More than one element found with id $id");
+    }
+    return PowerTraining.fromJson(result.first);
   }
 
   @override
-  Future<Iterable<PowerTraining>> findAllById(Iterable<String> ids) {
-    // TODO: implement findAllById
-    throw UnimplementedError();
+  Future<Iterable<PowerTraining>> findAll() async {
+    var result = await _database.query(powerTrainingRepositoryTable);
+    return result.map((map) => PowerTraining.fromJson(map));
   }
 
   @override
-  Future<PowerTraining?> findById(String id) {
-    // TODO: implement findById
-    throw UnimplementedError();
+  Future<Iterable<PowerTraining>> findAllById(Iterable<String> ids) async {
+    var result = await _database.query(
+        powerTrainingRepositoryTable,
+        where: 'id = ?',
+        whereArgs: ids.toList()
+    );
+    return result.map((map) => PowerTraining.fromJson(map));
+  }
+
+  @override
+  void deleteById(String id) {
+    _database.delete(
+      powerTrainingRepositoryTable,
+      where: 'id = ?',
+      whereArgs: [id]
+    );
   }
 
 }

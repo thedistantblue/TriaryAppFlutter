@@ -9,6 +9,6 @@ class UuidGenerator {
   const UuidGenerator(this._context);
 
   String generateUuid() {
-    return Provider.of<Uuid>(_context).v4();
+    return Provider.of<Uuid>(_context, listen: false).v4();
   }
 }

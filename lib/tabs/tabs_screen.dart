@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/tabs/cardio_training_list.dart';
 import 'package:triary_app/tabs/power_training_list.dart';
 
@@ -7,6 +9,9 @@ class TabsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var powerTrainingRepository =
+      Provider.of<BasePowerTrainingRepository>(context);
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -25,9 +30,9 @@ class TabsScreen extends StatelessWidget {
           ),
           title: const Text("TriaryApp"),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            PowerTrainingList(),
+            PowerTrainingList(powerTrainingRepository),
             CardioTrainingList(),
           ],
         ),
