@@ -68,7 +68,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SizedBox(
-            height: 250,
+            height: 220,
             child: NameDescriptionWidget(
               createFunction: ((String, String) record) {
                 createTraining(record);

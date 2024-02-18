@@ -17,43 +17,39 @@ class NameDescriptionWidget extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Wrap(
-              direction: Axis.horizontal,
-              runSpacing: 10,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                TextField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Name',
-                  ),
-                  controller: _nameEditingController,
+        child: Center(
+          child: Wrap(
+            direction: Axis.horizontal,
+            runSpacing: 10,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              TextField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Name',
                 ),
-                TextField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Description',
-                  ),
-                  controller: _descriptionEditingController,
+                controller: _nameEditingController,
+              ),
+              TextField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Description',
                 ),
-                Center(
-                  child: FilledButton(
-                    onPressed: () {
-                      _createFunction((_name, _description));
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Create'),
-                  ),
+                controller: _descriptionEditingController,
+              ),
+              Center(
+                child: FilledButton(
+                  onPressed: () {
+                    _createFunction((_name, _description));
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Create'),
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
