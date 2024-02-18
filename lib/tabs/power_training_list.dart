@@ -28,21 +28,27 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     getAllTrainings();
 
     return Scaffold(
-      body: Scrollbar(
-        child: ListView.builder(
-          itemCount: _trainings.length,
-          itemBuilder: (context, index) {
-            return Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(_trainings[index].name),
-                  Text(_trainings[index].description),
-                ],
-              ),
-            );
-          },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Scrollbar(
+          child: ListView.builder(
+            itemCount: _trainings.length,
+            itemBuilder: (context, index) {
+              return SizedBox(
+                height: 100,
+                child: Card(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(_trainings[index].name),
+                      Text(_trainings[index].description),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(

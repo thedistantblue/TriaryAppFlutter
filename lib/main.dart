@@ -17,24 +17,13 @@ void main() async {
       Provider<Uuid>(create: (_) => const Uuid()),
       Provider<UuidGenerator>(
           create: (context) =>
-              UuidGenerator(
-                  Provider.of<Uuid>(context, listen: false)
-              )
-      ),
+              UuidGenerator(Provider.of<Uuid>(context, listen: false))),
       Provider<BasePowerTrainingRepository>(
-          create: (context) =>
-              PowerTrainingRepository(
-                  Provider.of<UuidGenerator>(context, listen: false),
-                  dataBase
-              )
-      ),
+          create: (context) => PowerTrainingRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
       Provider<BaseCardioTrainingRepository>(
-          create: (context) =>
-              CardioTrainingRepository(
-                  Provider.of<UuidGenerator>(context, listen: false),
-                  dataBase
-              )
-      ),
+          create: (context) => CardioTrainingRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
     ],
     child: const MyApp(),
   ));
@@ -43,20 +32,15 @@ void main() async {
 Future<Database> initDatabase() async {
   WidgetsFlutterBinding.ensureInitialized();
   return openDatabase(
-    // Set the path to the database. Note: Using the `join` function from the
-    // `path` package is best practice to ensure the path is correctly
-    // constructed for each platform.
-    join(await getDatabasesPath(), 'triary_app.db'),
-    onCreate: (db, version) {
-      return db.execute(
-          'CREATE TABLE power_training('
-              'id VARCHAR(90) PRIMARY KEY, '
-              'data JSONB'
-              ')'
-      );
-    },
-    version: 1
-  );
+      // Set the path to the database. Note: Using the `join` function from the
+      // `path` package is best practice to ensure the path is correctly
+      // constructed for each platform.
+      join(await getDatabasesPath(), 'triary_app.db'), onCreate: (db, version) {
+    return db.execute('CREATE TABLE power_training('
+        'id VARCHAR(90) PRIMARY KEY, '
+        'data JSONB'
+        ')');
+  }, version: 1);
 }
 
 class MyApp extends StatelessWidget {
@@ -95,6 +79,7 @@ class MyApp extends StatelessWidget {
           onBackground: Colors.grey,
           surface: Color(0xFF373D46),
           onSurface: Colors.grey,
+          surfaceTint: Color(0xFF373D46),
         ),
         useMaterial3: true,
       ),
@@ -148,10 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -180,10 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
