@@ -6,8 +6,7 @@ class PowerTrainingList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:
-    );
+    return const Placeholder();
   }
+
 }

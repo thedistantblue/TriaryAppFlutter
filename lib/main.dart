@@ -1,29 +1,47 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:triary_app/data/data_base/base_cardio_training_repository.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/data/data_base/uuid_generator.dart';
-import 'package:triary_app/data/data_mock/cardio_training_repository_mock.dart';
-import 'package:triary_app/data/data_mock/power_training_repository_mock.dart';
+import 'package:triary_app/data/data_local/cardio_training_repository.dart';
+import 'package:triary_app/data/data_local/power_training_repository.dart';
 import 'package:triary_app/main_screen.dart';
 import 'package:uuid/uuid.dart';
-import 'package:uuid/v4.dart';
 
-void main() {
+void main() async {
+  var dataBase = await initDatabase();
   runApp(MultiProvider(
     providers: [
       Provider<Uuid>(create: (_) => const Uuid()),
       Provider<UuidGenerator>(create: (context) => UuidGenerator(context)),
       Provider<BasePowerTrainingRepository>(
-        create: (context) => PowerTrainingRepositoryMock(context)),
+        create: (context) => PowerTrainingRepository(context, dataBase)),
       Provider<BaseCardioTrainingRepository>(
-        create: (context) => CardioTrainingRepositoryMock(context),
-      )
+        create: (context) => CardioTrainingRepository(context, dataBase)),
     ],
     child: const MyApp(),
   ));
+}
+
+Future<Database> initDatabase() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  return openDatabase(
+    // Set the path to the database. Note: Using the `join` function from the
+    // `path` package is best practice to ensure the path is correctly
+    // constructed for each platform.
+    join(await getDatabasesPath(), 'triary_app.db'),
+    onCreate: (db, version) {
+      return db.execute(
+          'CREATE TABLE power_training('
+              'id VARCHAR(90) PRIMARY KEY, '
+              'data JSONB'
+              ')'
+      );
+    },
+    version: 1
+  );
 }
 
 class MyApp extends StatelessWidget {

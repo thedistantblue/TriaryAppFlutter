@@ -1,6 +1,7 @@
 class CardioTraining {
-  final String id, name, description;
+  late String id;
+  final String name, description;
 
-  CardioTraining(this.id, this.name, this.description);
+  CardioTraining(this.name, this.description);
 
 }
