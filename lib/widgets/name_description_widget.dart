@@ -25,7 +25,6 @@ class NameDescriptionWidget extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               TextField(
-                obscureText: true,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
                   labelText: AppLocalizations.of(context)!.name,
@@ -33,7 +32,6 @@ class NameDescriptionWidget extends StatelessWidget {
                 controller: _nameEditingController,
               ),
               TextField(
-                obscureText: true,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
                   labelText: AppLocalizations.of(context)!.description,
