@@ -40,6 +40,10 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
                 child: Dismissible(
                   key: Key(training.id),
                   onDismissed: (direction) {
+                    setState(() {
+                      _trainings.removeAt(index);
+                      deleteTraining(training);
+                    });
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Center(
@@ -103,10 +107,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
               "delete training ${training.name}"),
           actions: [
             MaterialButton(
-                onPressed: () {
-                  deleteTraining(training);
-                  Navigator.of(context).pop(true);
-                },
+                onPressed: () => Navigator.of(context).pop(true),
                 child: const Text("Delete")),
             MaterialButton(
               onPressed: () => Navigator.of(context).pop(false),
