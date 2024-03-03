@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triary_app/login/login_screen.dart';
-import 'package:triary_app/tabs/tabs_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -13,14 +12,14 @@ class MainScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FilledButton(
-            child: const Text("Offline usage"),
+            child: Text(AppLocalizations.of(context)!.offlineUsage),
             onPressed: () {
               _navigateToTabsScreen(context);
             },
           ),
           const Divider(),
           FilledButton(
-            child: const Text("Online usage"),
+            child: Text(AppLocalizations.of(context)!.onlineUsage),
             onPressed: () {
               _navigateToLoginScreen(context);
             },

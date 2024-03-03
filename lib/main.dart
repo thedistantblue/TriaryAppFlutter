@@ -12,6 +12,7 @@ import 'package:triary_app/main_screen.dart';
 import 'package:triary_app/tabs/power/pt_details.dart';
 import 'package:triary_app/tabs/tabs_screen.dart';
 import 'package:uuid/uuid.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   var dataBase = await initDatabase();
@@ -91,6 +92,8 @@ class MyApp extends StatelessWidget {
         "/login": (context) => const LoginScreen(),
         "/pt_details": (context) => const PtDetailsScreen()
       },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: const MainScreen(),
     );
   }

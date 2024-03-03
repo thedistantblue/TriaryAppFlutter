@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/tabs/cardio_training_list.dart';
 import 'package:triary_app/tabs/power_training_list.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TabsScreen extends StatelessWidget {
   const TabsScreen({super.key});
@@ -16,15 +17,15 @@ class TabsScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          bottom: const TabBar(
+          bottom: TabBar(
             tabs: [
               Tab(
-                icon: Icon(Icons.fitness_center),
-                text: "Power training",
+                icon: const Icon(Icons.fitness_center),
+                text: AppLocalizations.of(context)!.powerTraining,
               ),
               Tab(
-                icon: Icon(Icons.directions_run),
-                text: "Cardio training",
+                icon: const Icon(Icons.directions_run),
+                text: AppLocalizations.of(context)!.cardioTraining,
               )
             ],
           ),

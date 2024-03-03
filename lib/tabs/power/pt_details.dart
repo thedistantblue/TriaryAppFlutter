@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PtDetailsScreen extends StatelessWidget {
   const PtDetailsScreen({super.key});
@@ -7,10 +8,10 @@ class PtDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Power training details"),
+        title: Text(AppLocalizations.of(context)!.powerTrainingDetails),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -18,30 +19,30 @@ class PtDetailsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Exercises",
-                  style: TextStyle(fontSize: 20),
+                  AppLocalizations.of(context)!.exercises,
+                  style: const TextStyle(fontSize: 20),
                 ),
-                Icon(Icons.arrow_forward_outlined),
+                const Icon(Icons.arrow_forward_outlined),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Sets of exercises",
-                  style: TextStyle(fontSize: 20),
+                  AppLocalizations.of(context)!.exercisesSets,
+                  style: const TextStyle(fontSize: 20),
                 ),
-                Icon(Icons.arrow_forward_outlined),
+                const Icon(Icons.arrow_forward_outlined),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Dates",
-                  style: TextStyle(fontSize: 20),
+                  AppLocalizations.of(context)!.dates,
+                  style: const TextStyle(fontSize: 20),
                 ),
-                Icon(Icons.arrow_forward_outlined),
+                const Icon(Icons.arrow_forward_outlined),
               ],
             )
           ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/entity/training/power_training.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PowerTrainingList extends StatefulWidget {
   final BasePowerTrainingRepository _repository;
@@ -94,7 +95,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
         onPressed: () {
           createTrainingDialog(context);
         },
-        label: const Text("Add training"),
+        label: Text(AppLocalizations.of(context)!.addTraining),
         icon: const Icon(Icons.add),
       ),
     );
@@ -106,16 +107,16 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text("Training deletion"),
-          content: Text("Are you sure you want to "
-              "delete training ${training.name}"),
+          title: Text(AppLocalizations.of(context)!.trainingDeletion),
+          content: Text("${AppLocalizations.of(context)!.trainingDeletionText}"
+              " ${training.name}?"),
           actions: [
             MaterialButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: const Text("Delete")),
+                child: Text(AppLocalizations.of(context)!.delete)),
             MaterialButton(
               onPressed: () => Navigator.of(context).pop(false),
-              child: const Text("Cancel"),
+              child: Text(AppLocalizations.of(context)!.cancel),
             ),
           ],
         );

@@ -1,0 +1,18 @@
+{
+  "offlineUsage": "Оффлайн использование",
+  "onlineUsage": "Онлайн использование",
+  "powerTrainingDetails": "Детали силовой тренировки",
+  "addTraining": "Добавить тренировку",
+  "trainingDeletion": "Удаление тренировки",
+  "trainingDeletionText": "Вы уверены, что хотите удалить тренировку",
+  "delete": "Удалить",
+  "cancel": "Отмена",
+  "exercises": "Упражнения",
+  "exercisesSets": "Наборы упражнений",
+  "dates": "Даты",
+  "powerTraining": "Силовые тренировки",
+  "cardioTraining": "Кардио тренировки",
+  "name": "Имя",
+  "description": "Описание",
+  "create": "Создать"
+}

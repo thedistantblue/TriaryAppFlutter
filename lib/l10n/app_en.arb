@@ -1,0 +1,18 @@
+{
+  "offlineUsage": "Offline usage",
+  "onlineUsage": "Online usage",
+  "powerTrainingDetails": "Power training details",
+  "addTraining": "Add training",
+  "trainingDeletion": "Training deletion",
+  "trainingDeletionText": "Are you sure you want to delete training",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "exercises": "Exercises",
+  "exercisesSets": "Sets of exercises",
+  "dates": "Dates",
+  "powerTraining": "Power training",
+  "cardioTraining": "Cardio training",
+  "name": "Name",
+  "description": "Description",
+  "create": "Create"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NameDescriptionWidget extends StatelessWidget {
   final _nameEditingController = TextEditingController();
@@ -25,17 +26,17 @@ class NameDescriptionWidget extends StatelessWidget {
             children: [
               TextField(
                 obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Name',
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  labelText: AppLocalizations.of(context)!.name,
                 ),
                 controller: _nameEditingController,
               ),
               TextField(
                 obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Description',
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  labelText: AppLocalizations.of(context)!.description,
                 ),
                 controller: _descriptionEditingController,
               ),
@@ -45,7 +46,7 @@ class NameDescriptionWidget extends StatelessWidget {
                     _createFunction((_name, _description));
                     Navigator.of(context).pop();
                   },
-                  child: const Text('Create'),
+                  child: Text(AppLocalizations.of(context)!.create),
                 ),
               ),
             ],
