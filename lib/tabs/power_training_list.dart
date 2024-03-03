@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/entity/training/power_training.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
@@ -16,88 +18,89 @@ class PowerTrainingList extends StatefulWidget {
 class _PowerTrainingListState extends State<PowerTrainingList> {
   List<PowerTraining> _trainings = [];
 
-  void getAllTrainings() {
-    widget._repository.findAll().then((result) {
-      setState(() {
-        _trainings = result.toList();
-      });
-    });
-  }
+  // void getAllTrainings() {
+  //   widget._repository.findAll().then((result) {
+  //     setState(() {
+  //       _trainings = result.toList();
+  //     });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    getAllTrainings();
+    //getAllTrainings();
 
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Scrollbar(
-          child: ListView.builder(
-            itemCount: _trainings.length,
-            itemBuilder: (context, index) {
-              final training = _trainings[index];
-              return GestureDetector(
-                child: SizedBox(
-                  height: 100,
-                  child: Dismissible(
-                    key: Key(training.id),
-                    onDismissed: (direction) {
-                      setState(() {
-                        _trainings.removeAt(index);
-                        deleteTraining(training);
-                      });
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Center(
-                            child: Text('${training.name} deleted'),
+    return BlocBuilder<PowerTrainingBloc, PowerTrainingState>(
+      builder: (context, state) {
+        return Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Scrollbar(
+              child: ListView.builder(
+                itemCount: state.powerTrainings.length,
+                itemBuilder: (context, index) {
+                  final training = state.powerTrainings[index];
+                  return GestureDetector(
+                    child: SizedBox(
+                      height: 100,
+                      child: Dismissible(
+                        key: Key(training.id),
+                        onDismissed: (direction) {
+                          deleteTraining(
+                              context.read<PowerTrainingBloc>(), training);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Center(
+                                child: Text('${training.name} deleted'),
+                              ),
+                            ),
+                          );
+                        },
+                        background: const Card(
+                          color: Colors.red,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.delete,
+                                size: 40,
+                                color: Color(0xffffffff),
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
-                    background: const Card(
-                      color: Colors.red,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.delete,
-                            size: 40,
-                            color: Color(0xffffffff),
+                        confirmDismiss: (a) {
+                          return deleteTrainingDialog(context, training);
+                        },
+                        direction: DismissDirection.startToEnd,
+                        child: SizedBox.expand(
+                          child: Card(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(training.name),
+                                Text(training.description),
+                              ],
+                            ),
                           ),
-                        ],
-                      ),
-                    ),
-                    confirmDismiss: (a) {
-                      return deleteTrainingDialog(context, training);
-                    },
-                    direction: DismissDirection.startToEnd,
-                    child: SizedBox.expand(
-                      child: Card(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(training.name),
-                            Text(training.description),
-                          ],
                         ),
-                
                       ),
                     ),
-                  ),
-                ),
-                onTap: () => Navigator.of(context).pushNamed("/pt_details"),
-              );
-            },
+                    onTap: () => Navigator.of(context).pushNamed("/pt_details"),
+                  );
+                },
+              ),
+            ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          createTrainingDialog(context);
-        },
-        label: Text(AppLocalizations.of(context)!.addTraining),
-        icon: const Icon(Icons.add),
-      ),
+          floatingActionButton: FloatingActionButton.extended(
+            onPressed: () {
+              createTrainingDialog(context);
+            },
+            label: Text(AppLocalizations.of(context)!.addTraining),
+            icon: const Icon(Icons.add),
+          ),
+        );
+      },
     );
   }
 
@@ -124,12 +127,13 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     );
   }
 
-  void deleteTraining(PowerTraining training) {
+  void deleteTraining(PowerTrainingBloc bloc, PowerTraining training) {
     widget._repository.deleteById(training.id);
-    getAllTrainings();
+    bloc.add(PowerTrainingDeleted());
   }
 
   void createTrainingDialog(BuildContext context) {
+    final bloc = context.read<PowerTrainingBloc>();
     showDialog(
       context: context,
       builder: (context) => Dialog(
@@ -139,7 +143,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
             height: 220,
             child: NameDescriptionWidget(
               createFunction: ((String, String) record) {
-                createTraining(record);
+                createTraining(bloc, record);
               },
             ),
           ),
@@ -148,8 +152,8 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     );
   }
 
-  void createTraining((String, String) record) {
+  void createTraining(PowerTrainingBloc bloc, (String, String) record) {
     widget._repository.create(PowerTraining(record.$1, record.$2));
-    getAllTrainings();
+    bloc.add(PowerTrainingCreated());
   }
 }

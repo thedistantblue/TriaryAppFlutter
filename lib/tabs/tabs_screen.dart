@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/tabs/cardio_training_list.dart';
 import 'package:triary_app/tabs/power_training_list.dart';
@@ -11,7 +13,7 @@ class TabsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var powerTrainingRepository =
-      Provider.of<BasePowerTrainingRepository>(context, listen: false);
+        Provider.of<BasePowerTrainingRepository>(context, listen: false);
 
     return DefaultTabController(
       length: 2,
@@ -33,7 +35,11 @@ class TabsScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            PowerTrainingList(powerTrainingRepository),
+            BlocProvider(
+              create: (context) => PowerTrainingBloc(powerTrainingRepository)
+                ..add(PowerTrainingFetched()),
+              child: PowerTrainingList(powerTrainingRepository),
+            ),
             CardioTrainingList(),
           ],
         ),
