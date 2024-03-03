@@ -35,52 +35,56 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
             itemCount: _trainings.length,
             itemBuilder: (context, index) {
               final training = _trainings[index];
-              return SizedBox(
-                height: 100,
-                child: Dismissible(
-                  key: Key(training.id),
-                  onDismissed: (direction) {
-                    setState(() {
-                      _trainings.removeAt(index);
-                      deleteTraining(training);
-                    });
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Center(
-                          child: Text('${training.name} deleted'),
+              return GestureDetector(
+                child: SizedBox(
+                  height: 100,
+                  child: Dismissible(
+                    key: Key(training.id),
+                    onDismissed: (direction) {
+                      setState(() {
+                        _trainings.removeAt(index);
+                        deleteTraining(training);
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Center(
+                            child: Text('${training.name} deleted'),
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                  background: const Card(
-                    color: Colors.red,
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.delete,
-                          size: 40,
-                          color: Color(0xffffffff),
-                        ),
-                      ],
-                    ),
-                  ),
-                  confirmDismiss: (a) {
-                    return deleteTrainingDialog(context, training);
-                  },
-                  direction: DismissDirection.startToEnd,
-                  child: SizedBox.expand(
-                    child: Card(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      );
+                    },
+                    background: const Card(
+                      color: Colors.red,
+                      child: Row(
                         children: [
-                          Text(training.name),
-                          Text(training.description),
+                          Icon(
+                            Icons.delete,
+                            size: 40,
+                            color: Color(0xffffffff),
+                          ),
                         ],
+                      ),
+                    ),
+                    confirmDismiss: (a) {
+                      return deleteTrainingDialog(context, training);
+                    },
+                    direction: DismissDirection.startToEnd,
+                    child: SizedBox.expand(
+                      child: Card(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(training.name),
+                            Text(training.description),
+                          ],
+                        ),
+                
                       ),
                     ),
                   ),
                 ),
+                onTap: () => Navigator.of(context).pushNamed("/pt_details"),
               );
             },
           ),

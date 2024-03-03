@@ -9,6 +9,7 @@ import 'package:triary_app/data/data_local/cardio_training_repository.dart';
 import 'package:triary_app/data/data_local/power_training_repository.dart';
 import 'package:triary_app/login/login_screen.dart';
 import 'package:triary_app/main_screen.dart';
+import 'package:triary_app/tabs/power/pt_details.dart';
 import 'package:triary_app/tabs/tabs_screen.dart';
 import 'package:uuid/uuid.dart';
 
@@ -88,6 +89,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/tabs": (context) => const TabsScreen(),
         "/login": (context) => const LoginScreen(),
+        "/pt_details": (context) => const PtDetailsScreen()
       },
       home: const MainScreen(),
     );
