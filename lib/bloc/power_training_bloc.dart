@@ -41,6 +41,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     Emitter<PowerTrainingState> emit,
   ) async {
     try {
+      _repository.create(event.training);
       final trainings = await _repository.findAll();
       return emit(state.copyWith(
         status: PowerTrainingStatus.success,
@@ -56,6 +57,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     Emitter<PowerTrainingState> emit,
   ) async {
     try {
+      _repository.deleteById(event.training.id);
       final trainings = await _repository.findAll();
       return emit(state.copyWith(
         status: PowerTrainingStatus.success,

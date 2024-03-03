@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
-import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/entity/training/power_training.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PowerTrainingList extends StatefulWidget {
-  final BasePowerTrainingRepository _repository;
-
-  const PowerTrainingList(this._repository, {super.key});
+  const PowerTrainingList({super.key});
 
   @override
   State<PowerTrainingList> createState() => _PowerTrainingListState();
 }
 
 class _PowerTrainingListState extends State<PowerTrainingList> {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PowerTrainingBloc, PowerTrainingState>(
@@ -35,8 +31,9 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
                       child: Dismissible(
                         key: Key(training.id),
                         onDismissed: (direction) {
-                          deleteTraining(
-                              context.read<PowerTrainingBloc>(), training);
+                          context
+                              .read<PowerTrainingBloc>()
+                              .add(PowerTrainingDeleted(training));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Center(
@@ -117,8 +114,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
   }
 
   void deleteTraining(PowerTrainingBloc bloc, PowerTraining training) {
-    widget._repository.deleteById(training.id);
-    bloc.add(PowerTrainingDeleted());
+    bloc.add(PowerTrainingDeleted(training));
   }
 
   void createTrainingDialog(BuildContext context) {
@@ -132,17 +128,16 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
             height: 220,
             child: NameDescriptionWidget(
               createFunction: ((String, String) record) {
-                createTraining(bloc, record);
+                bloc.add(
+                  PowerTrainingCreated(
+                    PowerTraining(record.$1, record.$2),
+                  ),
+                );
               },
             ),
           ),
         ),
       ),
     );
-  }
-
-  void createTraining(PowerTrainingBloc bloc, (String, String) record) {
-    widget._repository.create(PowerTraining(record.$1, record.$2));
-    bloc.add(PowerTrainingCreated());
   }
 }

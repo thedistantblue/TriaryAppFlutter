@@ -38,7 +38,7 @@ class TabsScreen extends StatelessWidget {
             BlocProvider(
               create: (context) => PowerTrainingBloc(powerTrainingRepository)
                 ..add(PowerTrainingFetched()),
-              child: PowerTrainingList(powerTrainingRepository),
+              child: const PowerTrainingList(),
             ),
             CardioTrainingList(),
           ],
