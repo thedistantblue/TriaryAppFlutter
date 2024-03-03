@@ -39,7 +39,15 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
                 height: 100,
                 child: Dismissible(
                   key: Key(training.id),
-                  onDismissed: (direction) {},
+                  onDismissed: (direction) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Center(
+                          child: Text('${training.name} deleted'),
+                        ),
+                      ),
+                    );
+                  },
                   background: const Card(
                     color: Colors.red,
                     child: Row(
@@ -53,7 +61,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
                     ),
                   ),
                   confirmDismiss: (a) {
-                    return Future.value(false);
+                    return deleteTrainingDialog(context, training);
                   },
                   direction: DismissDirection.startToEnd,
                   child: SizedBox.expand(
@@ -84,7 +92,36 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     );
   }
 
-  void deleteTrainingDialog(BuildContext context) {}
+  Future<bool> deleteTrainingDialog(
+      BuildContext context, PowerTraining training) async {
+    return await showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text("Training deletion"),
+          content: Text("Are you sure you want to "
+              "delete training ${training.name}"),
+          actions: [
+            MaterialButton(
+                onPressed: () {
+                  deleteTraining(training);
+                  Navigator.of(context).pop(true);
+                },
+                child: const Text("Delete")),
+            MaterialButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: const Text("Cancel"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void deleteTraining(PowerTraining training) {
+    widget._repository.deleteById(training.id);
+    getAllTrainings();
+  }
 
   void createTrainingDialog(BuildContext context) {
     showDialog(
