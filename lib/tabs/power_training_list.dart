@@ -16,20 +16,9 @@ class PowerTrainingList extends StatefulWidget {
 }
 
 class _PowerTrainingListState extends State<PowerTrainingList> {
-  List<PowerTraining> _trainings = [];
-
-  // void getAllTrainings() {
-  //   widget._repository.findAll().then((result) {
-  //     setState(() {
-  //       _trainings = result.toList();
-  //     });
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
-    //getAllTrainings();
-
     return BlocBuilder<PowerTrainingBloc, PowerTrainingState>(
       builder: (context, state) {
         return Scaffold(
