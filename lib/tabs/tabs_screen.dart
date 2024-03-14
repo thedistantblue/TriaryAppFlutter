@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:storage_api/storage_api.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
-import 'package:triary_app/data/data_base/base_power_training_repository.dart';
 import 'package:triary_app/tabs/cardio_training_list.dart';
 import 'package:triary_app/tabs/power_training_list.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

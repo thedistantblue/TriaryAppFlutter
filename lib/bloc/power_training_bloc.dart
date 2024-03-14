@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:entity/entity.dart';
 import 'package:equatable/equatable.dart';
-import 'package:triary_app/data/data_base/base_power_training_repository.dart';
-import 'package:triary_app/entity/training/power_training.dart';
+import 'package:storage_api/storage_api.dart';
 
 part 'power_training_event.dart';
 
