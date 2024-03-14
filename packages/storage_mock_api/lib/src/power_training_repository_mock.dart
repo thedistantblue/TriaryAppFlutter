@@ -1,18 +1,15 @@
-import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-import 'package:triary_app/data/data_base/base_power_training_repository.dart';
-import 'package:triary_app/data/data_base/uuid_generator.dart';
-import 'package:triary_app/entity/training/power_training.dart';
+import 'package:entity/entity.dart';
+import 'package:storage_api/storage_api.dart';
 
 class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
-  final BuildContext _buildContext;
+  final UuidGenerator _uuidGenerator;
   final Map<String, PowerTraining> _idToTrainingMap = {};
 
-  PowerTrainingRepositoryMock(this._buildContext);
+  PowerTrainingRepositoryMock(this._uuidGenerator);
 
   @override
   PowerTraining create(PowerTraining training) {
-    training.id = Provider.of<UuidGenerator>(_buildContext).generateUuid();
+    training.id = _uuidGenerator.generateUuid();
     _idToTrainingMap[training.id] = training;
     return training;
   }

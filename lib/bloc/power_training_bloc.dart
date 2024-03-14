@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:entity/entity.dart';
 import 'package:equatable/equatable.dart';
 import 'package:storage_api/storage_api.dart';

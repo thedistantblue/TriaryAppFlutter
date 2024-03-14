@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:triary_app/data/data_base/base_cardio_training_repository.dart';
-import 'package:triary_app/entity/training/cardio_training.dart';
+import 'package:entity/entity.dart';
+import 'package:storage_api/storage_api.dart';
 
 class CardioTrainingRepositoryMock implements BaseCardioTrainingRepository {
-  final BuildContext _buildContext;
+  final UuidGenerator _uuidGenerator;
   final Map<String, CardioTraining> _idToTrainingMap = {};
 
-  CardioTrainingRepositoryMock(this._buildContext);
+  CardioTrainingRepositoryMock(this._uuidGenerator);
 
   @override
   CardioTraining create(CardioTraining powerTraining) {
