@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:storage_api/storage_api.dart';
 import 'package:storage_local_api/local_storage_api.dart';
 import 'package:triary_app/login/login_screen.dart';
@@ -12,7 +10,10 @@ import 'package:uuid/uuid.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
-  var dataBase = await initDatabase();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var dataBase = AppDatabase();
+
   runApp(MultiProvider(
     providers: [
       Provider<Uuid>(create: (_) => const Uuid()),
@@ -28,20 +29,6 @@ void main() async {
     ],
     child: const MyApp(),
   ));
-}
-
-Future<Database> initDatabase() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  return openDatabase(
-      // Set the path to the database. Note: Using the `join` function from the
-      // `path` package is best practice to ensure the path is correctly
-      // constructed for each platform.
-      join(await getDatabasesPath(), 'triary_app.db'), onCreate: (db, version) {
-    return db.execute('CREATE TABLE power_training('
-        'id VARCHAR(90) PRIMARY KEY, '
-        'data JSONB'
-        ')');
-  }, version: 1);
 }
 
 class MyApp extends StatelessWidget {

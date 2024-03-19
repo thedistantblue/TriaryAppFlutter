@@ -1,10 +1,10 @@
 import 'package:entity/entity.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:storage_api/storage_api.dart';
+import 'package:storage_local_api/local_storage_api.dart';
 
 class CardioTrainingRepository extends BaseCardioTrainingRepository {
   final UuidGenerator _uuidGenerator;
-  final Database _database;
+  final AppDatabase _database;
 
   CardioTrainingRepository(this._uuidGenerator, this._database);
 
@@ -21,7 +21,7 @@ class CardioTrainingRepository extends BaseCardioTrainingRepository {
   }
 
   @override
-  Future<Iterable<CardioTraining>> findAll() async {
+  Stream<Iterable<CardioTraining>> findAll() async* {
     // TODO: implement findById
     throw UnimplementedError();
   }

@@ -3,3 +3,4 @@ library;
 
 export 'src/cardio_training_repository.dart';
 export 'src/power_training_repository.dart';
+export 'src/drift/database.dart';

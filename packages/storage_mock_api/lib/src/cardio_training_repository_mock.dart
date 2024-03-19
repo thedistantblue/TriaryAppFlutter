@@ -20,7 +20,7 @@ class CardioTrainingRepositoryMock implements BaseCardioTrainingRepository {
   }
 
   @override
-  Future<Iterable<CardioTraining>> findAll() {
+  Stream<Iterable<CardioTraining>> findAll() {
     // TODO: implement findAll
     throw UnimplementedError();
   }

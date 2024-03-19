@@ -32,7 +32,6 @@ dependencies:
     sdk: flutter
   uuid: ^4.3.2
   provider: ^6.1.1
-  sqflite: ^2.3.2
   path: ^1.9.0
   built_value: ^8.9.0
   json_annotation: ^4.8.1

@@ -11,11 +11,17 @@ dependencies:
   uuid: ^4.3.2
   entity:
     path: ../entity
-  sqflite: ^2.3.2
   storage_api:
     path: ../storage_api
+  drift: ^2.16.0
+  sqlite3_flutter_libs: ^0.5.0
+  sqlite3: ^2.4.0
+  path: ^1.9.0
+  path_provider: ^2.0.0
 
 dev_dependencies:
   mocktail: ^1.0.3
   test: ^1.25.2
   very_good_analysis: ^5.1.0
+  drift_dev: ^2.16.0
+  build_runner: ^2.4.8

@@ -22,7 +22,7 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
   }
 
   @override
-  Future<Iterable<PowerTraining>> findAll() {
+  Stream<Iterable<PowerTraining>> findAll() {
     // TODO: implement findAll
     throw UnimplementedError();
   }

@@ -25,11 +25,13 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
   ) async {
     try {
       if (state.status == PowerTrainingStatus.initial) {
-        final trainings = await _repository.findAll();
-        return emit(state.copyWith(
-          status: PowerTrainingStatus.success,
-          powerTrainings: trainings.toList(),
-        ));
+        await emit.forEach(
+          _repository.findAll(),
+          onData: (trainings) => state.copyWith(
+            status: PowerTrainingStatus.success,
+            powerTrainings: trainings.toList(),
+          ),
+        );
       }
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
@@ -42,11 +44,11 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
   ) async {
     try {
       _repository.create(event.training);
-      final trainings = await _repository.findAll();
-      return emit(state.copyWith(
-        status: PowerTrainingStatus.success,
-        powerTrainings: trainings.toList(),
-      ));
+      // final trainings = await _repository.findAll();
+      // return emit(state.copyWith(
+      //   status: PowerTrainingStatus.success,
+      //   powerTrainings: trainings.toList(),
+      // ));
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
@@ -58,11 +60,11 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
   ) async {
     try {
       _repository.deleteById(event.training.id);
-      final trainings = await _repository.findAll();
-      return emit(state.copyWith(
-        status: PowerTrainingStatus.success,
-        powerTrainings: trainings.toList(),
-      ));
+      // final trainings = await _repository.findAll();
+      // return emit(state.copyWith(
+      //   status: PowerTrainingStatus.success,
+      //   powerTrainings: trainings.toList(),
+      // ));
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
@@ -73,11 +75,11 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     Emitter<PowerTrainingState> emit,
   ) async {
     try {
-      final trainings = await _repository.findAll();
-      return emit(state.copyWith(
-        status: PowerTrainingStatus.success,
-        powerTrainings: trainings.toList(),
-      ));
+      // final trainings = await _repository.findAll();
+      // return emit(state.copyWith(
+      //   status: PowerTrainingStatus.success,
+      //   powerTrainings: trainings.toList(),
+      // ));
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
