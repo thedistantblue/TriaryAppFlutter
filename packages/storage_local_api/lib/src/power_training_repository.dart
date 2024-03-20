@@ -27,9 +27,9 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
 
   @override
   Stream<Iterable<PowerTraining>> findAll() async* {
-    _database.select(_database.powerTrainingTable).map((event) {
-      return event.data;
-    }).watch();
+    yield* _database.select(_database.powerTrainingTable).watch().map((event) {
+      return event.map((e) => e.data);
+    });
   }
 
   @override
@@ -42,8 +42,8 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
 
   @override
   void deleteById(String id) {
-    _database
-        .delete(_database.powerTrainingTable)
-        .where((tbl) => tbl.id.equals(id));
+    (_database.delete(_database.powerTrainingTable)
+          ..where((tbl) => tbl.id.equals(id)))
+        .go();
   }
 }

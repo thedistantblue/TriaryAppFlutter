@@ -113,10 +113,6 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
     );
   }
 
-  void deleteTraining(PowerTrainingBloc bloc, PowerTraining training) {
-    bloc.add(PowerTrainingDeleted(training));
-  }
-
   void createTrainingDialog(BuildContext context) {
     final bloc = context.read<PowerTrainingBloc>();
     showDialog(
