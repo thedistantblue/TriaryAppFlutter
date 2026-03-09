@@ -7,7 +7,7 @@ import 'package:triary_app/main_screen.dart';
 import 'package:triary_app/tabs/power/pt_details.dart';
 import 'package:triary_app/tabs/tabs_screen.dart';
 import 'package:uuid/uuid.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:triary_app/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

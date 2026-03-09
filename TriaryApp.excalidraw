@@ -1,7 +1,7 @@
 {
   "type": "excalidraw",
   "version": 2,
-  "source": "https://excalidraw.com",
+  "source": "https://excalidraw-jetbrains-plugin",
   "elements": [
     {
       "type": "rectangle",
@@ -34,8 +34,8 @@
     },
     {
       "type": "text",
-      "version": 264,
-      "versionNonce": 869378592,
+      "version": 265,
+      "versionNonce": 945292589,
       "isDeleted": false,
       "id": "zCFyu0xDXIinNIWwADDPZ",
       "fillStyle": "solid",
@@ -68,7 +68,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886351,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -78,7 +78,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "категории\nупражнения\nтренировки\n",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 93
     },
     {
       "type": "rectangle",
@@ -116,8 +117,8 @@
     },
     {
       "type": "text",
-      "version": 175,
-      "versionNonce": 1012360736,
+      "version": 176,
+      "versionNonce": 486010915,
       "isDeleted": false,
       "id": "0XD_VThexzbcUNglnSg_S",
       "fillStyle": "solid",
@@ -137,7 +138,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886351,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -147,7 +148,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Руки\nНоги\nПлечи\nСпина\nПресс\nГрудь\n.........",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 168
     },
     {
       "type": "arrow",
@@ -289,8 +291,8 @@
     },
     {
       "type": "text",
-      "version": 159,
-      "versionNonce": 1544314400,
+      "version": 160,
+      "versionNonce": 1121507213,
       "isDeleted": false,
       "id": "UwIOXhoHViLtWJm7FQC2W",
       "fillStyle": "solid",
@@ -310,7 +312,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886351,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -320,7 +322,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "сгибание\nна бицепс\n\nштанга\nна бицепс\n\n..................",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 168
     },
     {
       "type": "rectangle",
@@ -410,8 +413,8 @@
     },
     {
       "type": "text",
-      "version": 143,
-      "versionNonce": 295344096,
+      "version": 144,
+      "versionNonce": 359396291,
       "isDeleted": false,
       "id": "k3Nz6oJcgVlqsds23bZlf",
       "fillStyle": "solid",
@@ -440,7 +443,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886352,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -450,12 +453,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Тренировка1\n\nТренировка2\n\nТренировка3\n\nТренировка4\n.....................",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 193
     },
     {
       "type": "text",
-      "version": 143,
-      "versionNonce": 1558402592,
+      "version": 144,
+      "versionNonce": 1045454317,
       "isDeleted": false,
       "id": "oIFGGQaqexT6FuBKkYjQD",
       "fillStyle": "solid",
@@ -475,7 +479,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886352,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -485,12 +489,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Категория вряд ли будет много, поэтому\nздесь список ещё можно использовать",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "text",
-      "version": 195,
-      "versionNonce": 1446812640,
+      "version": 196,
+      "versionNonce": 1407091555,
       "isDeleted": false,
       "id": "VQZkfCLC1Z08CpoMft1_3",
       "fillStyle": "solid",
@@ -510,7 +515,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -520,12 +525,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "упражнений может быть очень много, и хранить\nих в одном общем списке - как-то не особо круто.\nкак вариант - можно группировать по категориям",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "type": "text",
-      "version": 248,
-      "versionNonce": 777228832,
+      "version": 249,
+      "versionNonce": 1103632461,
       "isDeleted": false,
       "id": "9_OO5mMtO-FjLttr4omXX",
       "fillStyle": "solid",
@@ -545,7 +551,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -555,7 +561,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "тренировок так же может быть очень много. например,\nзанимается человек год - у него будет просто дохрена\nтренировок, хотелось бы их тоже как-то хотя бы группировать\n",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 93
     },
     {
       "type": "rectangle",
@@ -869,8 +876,8 @@
     },
     {
       "type": "text",
-      "version": 198,
-      "versionNonce": 20200992,
+      "version": 199,
+      "versionNonce": 815668995,
       "isDeleted": false,
       "id": "nEsrooKw5m3IBmqxcqPHt",
       "fillStyle": "solid",
@@ -890,7 +897,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -900,7 +907,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "......................",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "arrow",
@@ -1046,8 +1054,8 @@
     },
     {
       "type": "text",
-      "version": 95,
-      "versionNonce": 26424864,
+      "version": 96,
+      "versionNonce": 1192855213,
       "isDeleted": false,
       "id": "bSJJ-5U0sCLX6ZEVmHGi1",
       "fillStyle": "solid",
@@ -1067,7 +1075,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1077,12 +1085,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Ноябрь 2023\n\nОктябрь 2023",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "type": "text",
-      "version": 55,
-      "versionNonce": 2096806880,
+      "version": 56,
+      "versionNonce": 1982416547,
       "isDeleted": false,
       "id": "RY-DOZlBlwRnY8IE8zl5w",
       "fillStyle": "solid",
@@ -1102,7 +1111,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1112,12 +1121,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Сентябрь 2023",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "text",
-      "version": 46,
-      "versionNonce": 1913090592,
+      "version": 47,
+      "versionNonce": 1357785357,
       "isDeleted": false,
       "id": "OplZ6aLRf5pEb3f_HqNaB",
       "fillStyle": "solid",
@@ -1137,7 +1147,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886353,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1147,7 +1157,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "..........",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "arrow",
@@ -1255,8 +1266,8 @@
     },
     {
       "type": "text",
-      "version": 173,
-      "versionNonce": 1688552416,
+      "version": 174,
+      "versionNonce": 456030787,
       "isDeleted": false,
       "id": "-lkX2_WrRssVaeblRdvBA",
       "fillStyle": "solid",
@@ -1276,7 +1287,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1286,12 +1297,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Нажали на категорию - перешли в список,\nв котором есть EFAB, ведущая на экран\nдобавления, на нем добавили и \nвернулись в список",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 93
     },
     {
       "type": "text",
-      "version": 348,
-      "versionNonce": 371812896,
+      "version": 349,
+      "versionNonce": 1354727277,
       "isDeleted": false,
       "id": "9x-rjjJ6LzzLvD-E9lmzF",
       "fillStyle": "solid",
@@ -1311,7 +1323,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1321,12 +1333,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "На этом экране должна быть EFAB,\nведущая на экран создания тренировки. \nДля тренировки обязательно указывается дата,\nчтобы всегда можно было сгруппировать",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 93
     },
     {
       "type": "text",
-      "version": 61,
-      "versionNonce": 1259456480,
+      "version": 62,
+      "versionNonce": 1015822819,
       "isDeleted": false,
       "id": "BK4lQiddqBXuPcx9hEQ1b",
       "fillStyle": "solid",
@@ -1346,7 +1359,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1356,12 +1369,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "плохой вариант",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "text",
-      "version": 93,
-      "versionNonce": 2109154848,
+      "version": 94,
+      "versionNonce": 1289161165,
       "isDeleted": false,
       "id": "TUQMlgnVksXp2MSO0GWHM",
       "fillStyle": "solid",
@@ -1381,7 +1395,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1391,7 +1405,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "плохой вариант",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -1424,8 +1439,8 @@
     },
     {
       "type": "text",
-      "version": 387,
-      "versionNonce": 606954016,
+      "version": 388,
+      "versionNonce": 1464927619,
       "isDeleted": false,
       "id": "LvtvPiTXgl_wz8xqbGBLq",
       "fillStyle": "solid",
@@ -1450,7 +1465,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -1460,7 +1475,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "упражнения\nтренировки\n",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "type": "rectangle",
@@ -1976,8 +1992,8 @@
     },
     {
       "type": "text",
-      "version": 88,
-      "versionNonce": 1474030560,
+      "version": 89,
+      "versionNonce": 1179535405,
       "isDeleted": false,
       "id": "c13UNVrffrsAl3FFs9Bhd",
       "fillStyle": "solid",
@@ -1997,7 +2013,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886354,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2007,7 +2023,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Ноги",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -2080,8 +2097,8 @@
     },
     {
       "type": "text",
-      "version": 103,
-      "versionNonce": 31718944,
+      "version": 104,
+      "versionNonce": 1119575331,
       "isDeleted": false,
       "id": "IQVii5j48q5hYarNK4VKc",
       "fillStyle": "solid",
@@ -2101,7 +2118,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2111,7 +2128,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "жим платформы\nприседания со штангой",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -2149,8 +2167,8 @@
     },
     {
       "type": "text",
-      "version": 399,
-      "versionNonce": 1023359520,
+      "version": 400,
+      "versionNonce": 1594800781,
       "isDeleted": false,
       "id": "YOqtL6ba51eyYS5XT2n7P",
       "fillStyle": "solid",
@@ -2170,7 +2188,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2180,7 +2198,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Название категории",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -2412,8 +2431,8 @@
     },
     {
       "type": "text",
-      "version": 61,
-      "versionNonce": 1068598240,
+      "version": 62,
+      "versionNonce": 1782169795,
       "isDeleted": false,
       "id": "i6sGgjQBaWokNVW78JIlX",
       "fillStyle": "solid",
@@ -2433,7 +2452,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2443,7 +2462,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Сгибатели ног\nкол-во: 3",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -2476,8 +2496,8 @@
     },
     {
       "type": "text",
-      "version": 178,
-      "versionNonce": 2056652768,
+      "version": 179,
+      "versionNonce": 1070719213,
       "isDeleted": false,
       "id": "LOxjJ9LIVmgn1Q1IMTkYD",
       "fillStyle": "solid",
@@ -2497,7 +2517,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2507,7 +2527,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Разгибатели ног\nкол-во: 2",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -2540,8 +2561,8 @@
     },
     {
       "type": "text",
-      "version": 27,
-      "versionNonce": 1850346464,
+      "version": 28,
+      "versionNonce": 1198174307,
       "isDeleted": false,
       "id": "AM2VF-1U6HKq4PEM1wu0N",
       "fillStyle": "solid",
@@ -2566,7 +2587,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2576,7 +2597,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Икры\nкол-во: 1",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -2666,8 +2688,8 @@
     },
     {
       "type": "text",
-      "version": 20,
-      "versionNonce": 493608480,
+      "version": 21,
+      "versionNonce": 1042365261,
       "isDeleted": false,
       "id": "at2_C353TzYIImPbMxq9g",
       "fillStyle": "solid",
@@ -2687,7 +2709,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2697,12 +2719,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Икры",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "text",
-      "version": 107,
-      "versionNonce": 643863520,
+      "version": 108,
+      "versionNonce": 471641091,
       "isDeleted": false,
       "id": "bjG59ho2_Dt0cklP3hUeX",
       "fillStyle": "solid",
@@ -2722,7 +2745,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -2732,7 +2755,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Какое-то упражнение \nдля икр",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -3006,8 +3030,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 2009317920,
-      "version": 144,
-      "versionNonce": 1416081376,
+      "version": 145,
+      "versionNonce": 1112951213,
       "isDeleted": false,
       "boundElements": [
         {
@@ -3019,7 +3043,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "text": "Ноябрь 2023\n\nОктябрь 2023\n\nСентябрь 2023",
@@ -3029,7 +3053,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Ноябрь 2023\n\nОктябрь 2023\n\nСентябрь 2023",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 118
     },
     {
       "id": "Lca5rkk7USqTReoNdMaMR",
@@ -3136,8 +3161,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 1215085088,
-      "version": 114,
-      "versionNonce": 2039658016,
+      "version": 115,
+      "versionNonce": 1817064355,
       "isDeleted": false,
       "boundElements": [
         {
@@ -3145,7 +3170,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886355,
       "link": null,
       "locked": false,
       "text": "выбор вариантов группировки и сортировки",
@@ -3155,7 +3180,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "выбор вариантов группировки и сортировки",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "Whmr_3oyjO9qzlAVJxhK_",
@@ -3176,11 +3202,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 980613664,
-      "version": 104,
-      "versionNonce": 649280480,
+      "version": 105,
+      "versionNonce": 1838844941,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "...............",
@@ -3190,7 +3216,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "...............",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -3386,11 +3413,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1284333536,
-      "version": 313,
-      "versionNonce": 2040154080,
+      "version": 314,
+      "versionNonce": 942524227,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Название:____\nОписание:____\nДата:_____",
@@ -3400,7 +3427,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Название:____\nОписание:____\nДата:_____",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "id": "4tmvRi-UgncoxWSckt_qb",
@@ -3421,8 +3449,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 60118560,
-      "version": 363,
-      "versionNonce": 1732001760,
+      "version": 364,
+      "versionNonce": 2145878637,
       "isDeleted": false,
       "boundElements": [
         {
@@ -3430,7 +3458,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837188302,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "штанга на бицепс\nвертикальная протяжка\nгоризонтальная протяжка",
@@ -3440,7 +3468,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "штанга на бицепс\nвертикальная протяжка\nгоризонтальная протяжка",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "id": "p4tu0Q0z7dcRJUYUh_KkK",
@@ -3655,8 +3684,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 840313824,
-      "version": 257,
-      "versionNonce": 331831264,
+      "version": 258,
+      "versionNonce": 1981408995,
       "isDeleted": false,
       "boundElements": [
         {
@@ -3664,7 +3693,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Добавить упражнение в \nтренировку",
@@ -3674,7 +3703,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Добавить упражнение в \nтренировку",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "rectangle",
@@ -3785,8 +3815,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 586985440,
-      "version": 176,
-      "versionNonce": 7000608,
+      "version": 177,
+      "versionNonce": 2114366669,
       "isDeleted": false,
       "boundElements": [
         {
@@ -3794,7 +3824,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Моя первая тренировка\nна бицепс",
@@ -3804,7 +3834,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Моя первая тренировка\nна бицепс",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "id": "rP5qJp4BwdcTPbqSvXdwl",
@@ -3859,11 +3890,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1127352864,
-      "version": 67,
-      "versionNonce": 1804308000,
+      "version": 68,
+      "versionNonce": 1285624451,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Моя тренировка",
@@ -3873,7 +3904,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Моя тренировка",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -4023,8 +4055,8 @@
     },
     {
       "type": "text",
-      "version": 384,
-      "versionNonce": 1087663072,
+      "version": 385,
+      "versionNonce": 395414317,
       "isDeleted": false,
       "id": "2N2RycibqnuZYBXOp2hTW",
       "fillStyle": "hachure",
@@ -4049,7 +4081,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -4059,7 +4091,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "штанга на бицепс\nвертикальная протяжка\nгоризонтальная протяжка\n",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 93
     },
     {
       "id": "W7DWpI1K-TbtW83bRkETW",
@@ -4188,8 +4221,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 1825863648,
-      "version": 86,
-      "versionNonce": 1641214944,
+      "version": 87,
+      "versionNonce": 209832483,
       "isDeleted": false,
       "boundElements": [
         {
@@ -4197,7 +4230,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Название в апп баре",
@@ -4207,7 +4240,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Название в апп баре",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "L-EOVmiDWlXOaqMMKSeow",
@@ -4284,11 +4318,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1647848416,
-      "version": 140,
-      "versionNonce": 2017340384,
+      "version": 141,
+      "versionNonce": 1290902925,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837215435,
+      "updated": 1773055886356,
       "link": null,
       "locked": false,
       "text": "Возвращаемся назад при создании",
@@ -4298,7 +4332,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Возвращаемся назад при создании",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "qHufAgIzQTlQrS3yyp_Zz",
@@ -4375,11 +4410,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 127954464,
-      "version": 121,
-      "versionNonce": 718240736,
+      "version": 122,
+      "versionNonce": 1789562307,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Возвращаемся сюда при сохранении",
@@ -4389,7 +4424,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Возвращаемся сюда при сохранении",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "Yu8liG63bWC5cqngp9qsa",
@@ -4462,8 +4498,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 1909824480,
-      "version": 294,
-      "versionNonce": 981691936,
+      "version": 295,
+      "versionNonce": 1432380397,
       "isDeleted": false,
       "boundElements": [
         {
@@ -4471,7 +4507,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Может, сделать какой-нибудь типа большой \nапп бар, в котором будет иназвание, \nи описание, а при проматывании вниз уже упражнения?",
@@ -4481,7 +4517,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Может, сделать какой-нибудь типа большой \nапп бар, в котором будет иназвание, \nи описание, а при проматывании вниз уже упражнения?",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 68
     },
     {
       "type": "rectangle",
@@ -4669,8 +4706,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 1014608864,
-      "version": 186,
-      "versionNonce": 727543776,
+      "version": 187,
+      "versionNonce": 2050612579,
       "isDeleted": false,
       "boundElements": [
         {
@@ -4678,7 +4715,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837235692,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Должна быть возможность \nменять порядок",
@@ -4688,12 +4725,13 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Должна быть возможность \nменять порядок",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "text",
-      "version": 345,
-      "versionNonce": 1253643232,
+      "version": 346,
+      "versionNonce": 1156013645,
       "isDeleted": false,
       "id": "GW6_ciRKMXic_UypWYQbA",
       "fillStyle": "hachure",
@@ -4718,7 +4756,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -4728,7 +4766,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Должна быть возможность \nменять порядок",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "id": "MpNOnfKQhM24wNGilrp1G",
@@ -4813,8 +4852,8 @@
     },
     {
       "type": "text",
-      "version": 183,
-      "versionNonce": 2003997216,
+      "version": 184,
+      "versionNonce": 1719548163,
       "isDeleted": false,
       "id": "_qm9Yf-IMMkyHbPbJKoF8",
       "fillStyle": "hachure",
@@ -4834,7 +4873,7 @@
       "frameId": null,
       "roundness": null,
       "boundElements": [],
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -4844,7 +4883,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Моя тренировка",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "YEJpChH0VAPCmXfTCYJHH",
@@ -4865,11 +4905,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 694630368,
-      "version": 93,
-      "versionNonce": 1763714016,
+      "version": 94,
+      "versionNonce": 1918897325,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Текущее упражнение:\nштанга на бицепс",
@@ -4879,7 +4919,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Текущее упражнение:\nштанга на бицепс",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "id": "zLz8v7RI2bYVFYxQ7QJw0",
@@ -4900,11 +4941,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1751855648,
-      "version": 118,
-      "versionNonce": 1397525024,
+      "version": 119,
+      "versionNonce": 1828069539,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155350,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Подход 1: ___  ___\n          повторы  вес",
@@ -4914,7 +4955,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Подход 1: ___  ___\n          повторы  вес",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 43
     },
     {
       "type": "ellipse",
@@ -5064,8 +5106,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 176261664,
-      "version": 41,
-      "versionNonce": 185106976,
+      "version": 42,
+      "versionNonce": 494137101,
       "isDeleted": false,
       "boundElements": [
         {
@@ -5073,7 +5115,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837155351,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Добавить подход",
@@ -5083,7 +5125,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Добавить подход",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     },
     {
       "id": "7dcH6f94BJ7HaVdBSrMyy",
@@ -5104,11 +5147,11 @@
       "frameId": null,
       "roundness": null,
       "seed": 1811766240,
-      "version": 453,
-      "versionNonce": 1766862816,
+      "version": 455,
+      "versionNonce": 391124035,
       "isDeleted": false,
       "boundElements": null,
-      "updated": 1711837155351,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Должна быть возможность применить\nколичество подходов, повторов и веса \nиз прошлой тренировки для этого упражнения, \nно они должны в таком случае выделяться\nдругим цветом, чтобы человек понимал, что\nзначения в полях - из прошлой тренировки",
@@ -5118,7 +5161,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Должна быть возможность применить\nколичество подходов, повторов и веса \nиз прошлой тренировки для этого упражнения, \nно они должны в таком случае выделяться\nдругим цветом, чтобы человек понимал, что\nзначения в полях - из прошлой тренировки",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 143
     },
     {
       "id": "dxvDx3z6o14fLEr7TMITB",
@@ -5283,8 +5327,8 @@
       "frameId": null,
       "roundness": null,
       "seed": 252820448,
-      "version": 69,
-      "versionNonce": 253811680,
+      "version": 70,
+      "versionNonce": 1419543917,
       "isDeleted": false,
       "boundElements": [
         {
@@ -5292,7 +5336,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1711837229687,
+      "updated": 1773055886357,
       "link": null,
       "locked": false,
       "text": "Кнопка удаления элемента",
@@ -5302,7 +5346,8 @@
       "verticalAlign": "top",
       "containerId": null,
       "originalText": "Кнопка удаления элемента",
-      "lineHeight": 1.25
+      "lineHeight": 1.25,
+      "baseline": 18
     }
   ],
   "appState": {

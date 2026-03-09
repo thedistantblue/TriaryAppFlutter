@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:triary_app/l10n/app_localizations.dart';
 
 class PowerTrainingList extends StatefulWidget {
   const PowerTrainingList({super.key});
