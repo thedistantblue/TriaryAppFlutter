@@ -19,6 +19,9 @@ final TypeConverter<PowerTraining, String> converter =
 class PowerTrainingTable extends Table {
   TextColumn get id => text().withLength(min: 0, max: 90)();
   TextColumn get data => text().map(converter)();
+
+  @override
+  Set<Column> get primaryKey => {id};
 }
 
 @DriftDatabase(tables: [PowerTrainingTable])
@@ -26,7 +29,25 @@ class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+        onCreate: (m) => m.createAll(),
+        onUpgrade: (m, from, to) async {
+          if (from < 2) {
+            // id становится primary key; SQLite не умеет менять PK через ALTER,
+            // поэтому пересоздаём таблицу, сохраняя данные.
+            await customStatement(
+                'ALTER TABLE power_training_table RENAME TO power_training_table_old');
+            await m.createTable(powerTrainingTable);
+            await customStatement(
+                'INSERT INTO power_training_table (id, data) '
+                'SELECT id, data FROM power_training_table_old');
+            await customStatement('DROP TABLE power_training_table_old');
+          }
+        },
+      );
 }
 
 LazyDatabase _openConnection() {
