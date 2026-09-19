@@ -9,7 +9,7 @@ class CardioTrainingRepository extends BaseCardioTrainingRepository {
   CardioTrainingRepository(this._uuidGenerator, this._database);
 
   @override
-  CardioTraining create(CardioTraining training) {
+  Future<CardioTraining> create(CardioTraining training) {
     // TODO: implement create
     throw UnimplementedError();
   }
@@ -33,7 +33,7 @@ class CardioTrainingRepository extends BaseCardioTrainingRepository {
   }
 
   @override
-  void deleteById(String id) {
+  Future<void> deleteById(String id) {
     // TODO: implement deleteById
     throw UnimplementedError();
   }

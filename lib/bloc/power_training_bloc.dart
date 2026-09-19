@@ -43,12 +43,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     Emitter<PowerTrainingState> emit,
   ) async {
     try {
-      _repository.create(event.training);
-      // final trainings = await _repository.findAll();
-      // return emit(state.copyWith(
-      //   status: PowerTrainingStatus.success,
-      //   powerTrainings: trainings.toList(),
-      // ));
+      await _repository.create(event.training);
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
@@ -59,12 +54,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     Emitter<PowerTrainingState> emit,
   ) async {
     try {
-      _repository.deleteById(event.training.id);
-      // final trainings = await _repository.findAll();
-      // return emit(state.copyWith(
-      //   status: PowerTrainingStatus.success,
-      //   powerTrainings: trainings.toList(),
-      // ));
+      await _repository.deleteById(event.training.id);
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }

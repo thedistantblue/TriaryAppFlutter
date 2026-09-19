@@ -9,9 +9,9 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
   PowerTrainingRepository(this._uuidGenerator, this._database);
 
   @override
-  PowerTraining create(PowerTraining training) {
+  Future<PowerTraining> create(PowerTraining training) async {
     training.id = _uuidGenerator.generateUuid();
-    _database.into(_database.powerTrainingTable).insert(
+    await _database.into(_database.powerTrainingTable).insert(
           PowerTrainingTableCompanion.insert(id: training.id, data: training),
         );
     return training;
@@ -41,8 +41,8 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
   }
 
   @override
-  void deleteById(String id) {
-    (_database.delete(_database.powerTrainingTable)
+  Future<void> deleteById(String id) async {
+    await (_database.delete(_database.powerTrainingTable)
           ..where((tbl) => tbl.id.equals(id)))
         .go();
   }
