@@ -92,7 +92,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
 
   Future<bool> deleteTrainingDialog(
       BuildContext context, PowerTraining training) async {
-    return await showDialog(
+    return await showDialog<bool>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -110,7 +110,8 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
           ],
         );
       },
-    );
+    ) ??
+        false;
   }
 
   void createTrainingDialog(BuildContext context) {
