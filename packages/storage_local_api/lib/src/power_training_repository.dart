@@ -19,10 +19,10 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
 
   @override
   Future<PowerTraining?> findById(String id) async {
-    return (await (_database.select(_database.powerTrainingTable)
-              ..where((tbl) => tbl.id.equals(id)))
-            .getSingle())
-        .data;
+    final row = await (_database.select(_database.powerTrainingTable)
+          ..where((tbl) => tbl.id.equals(id)))
+        .getSingleOrNull();
+    return row?.data;
   }
 
   @override
