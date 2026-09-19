@@ -38,8 +38,6 @@ dependencies:
   equatable: ^2.0.5
   entity:
     path: packages/entity
-  repository:
-    path: packages/repository
   storage_api:
     path: packages/storage_api
   storage_local_api:
