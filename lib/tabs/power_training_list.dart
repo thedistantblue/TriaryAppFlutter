@@ -127,7 +127,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
               createFunction: ((String, String) record) {
                 bloc.add(
                   PowerTrainingCreated(
-                    PowerTraining(record.$1, record.$2),
+                    PowerTraining(name: record.$1, description: record.$2),
                   ),
                 );
               },

@@ -5,11 +5,18 @@ part 'power_training.g.dart';
 
 @JsonSerializable()
 class PowerTraining with EquatableMixin {
-  PowerTraining(this.name, this.description);
+  PowerTraining({this.id = '', required this.name, required this.description});
 
-  late final String id;
+  final String id;
   final String name;
   final String description;
+
+  PowerTraining copyWith({String? id, String? name, String? description}) =>
+      PowerTraining(
+        id: id ?? this.id,
+        name: name ?? this.name,
+        description: description ?? this.description,
+      );
 
   factory PowerTraining.fromJson(Map<String, dynamic> json) =>
       _$PowerTrainingFromJson(json);

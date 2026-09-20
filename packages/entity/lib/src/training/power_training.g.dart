@@ -8,9 +8,10 @@ part of 'power_training.dart';
 
 PowerTraining _$PowerTrainingFromJson(Map<String, dynamic> json) =>
     PowerTraining(
-      json['name'] as String,
-      json['description'] as String,
-    )..id = json['id'] as String;
+      id: json['id'] as String,
+      name: json['name'] as String,
+      description: json['description'] as String,
+    );
 
 Map<String, dynamic> _$PowerTrainingToJson(PowerTraining instance) =>
     <String, dynamic>{

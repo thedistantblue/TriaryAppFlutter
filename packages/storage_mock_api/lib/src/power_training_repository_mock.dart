@@ -9,9 +9,9 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
 
   @override
   Future<PowerTraining> create(PowerTraining training) async {
-    training.id = _uuidGenerator.generateUuid();
-    _idToTrainingMap[training.id] = training;
-    return training;
+    final persisted = training.copyWith(id: _uuidGenerator.generateUuid());
+    _idToTrainingMap[persisted.id] = persisted;
+    return persisted;
   }
 
   @override

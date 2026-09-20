@@ -10,11 +10,11 @@ class PowerTrainingRepository extends BasePowerTrainingRepository {
 
   @override
   Future<PowerTraining> create(PowerTraining training) async {
-    training.id = _uuidGenerator.generateUuid();
+    final persisted = training.copyWith(id: _uuidGenerator.generateUuid());
     await _database.into(_database.powerTrainingTable).insert(
-          PowerTrainingTableCompanion.insert(id: training.id, data: training),
+          PowerTrainingTableCompanion.insert(id: persisted.id, data: persisted),
         );
-    return training;
+    return persisted;
   }
 
   @override
