@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'power_training.g.dart';
 
 @JsonSerializable()
-class PowerTraining with EquatableMixin {
+class PowerTraining with Equatable {
   PowerTraining({this.id = '', required this.name, required this.description});
 
   final String id;
