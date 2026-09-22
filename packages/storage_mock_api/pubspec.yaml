@@ -2,19 +2,18 @@ name: storage_mock_api
 description: A Very Good Project created by Very Good CLI.
 version: 0.1.0+1
 publish_to: none
+resolution: workspace
 
 environment:
-  sdk: "^3.3.0"
+  sdk: ^3.13.0
 
 dependencies:
-  meta: ^1.7.0
-  uuid: ^4.3.2
-  entity:
-    path: ../entity
-  storage_api:
-    path: ../storage_api
+  meta: ^1.19.0
+  uuid: ^4.6.0
+  entity: any
+  storage_api: any
 
 dev_dependencies:
-  mocktail: ^1.0.3
-  test: ^1.25.2
-  very_good_analysis: ^5.1.0
+  mocktail: ^1.0.5
+  test: 1.31.1
+  very_good_analysis: ^11.0.0

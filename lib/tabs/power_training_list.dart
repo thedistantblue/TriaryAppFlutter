@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:triary_app/l10n/app_localizations.dart';
 
 class PowerTrainingList extends StatefulWidget {
   const PowerTrainingList({super.key});
@@ -92,7 +92,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
 
   Future<bool> deleteTrainingDialog(
       BuildContext context, PowerTraining training) async {
-    return await showDialog(
+    return await showDialog<bool>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -110,7 +110,8 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
           ],
         );
       },
-    );
+    ) ??
+        false;
   }
 
   void createTrainingDialog(BuildContext context) {
@@ -126,7 +127,7 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
               createFunction: ((String, String) record) {
                 bloc.add(
                   PowerTrainingCreated(
-                    PowerTraining(record.$1, record.$2),
+                    PowerTraining(name: record.$1, description: record.$2),
                   ),
                 );
               },

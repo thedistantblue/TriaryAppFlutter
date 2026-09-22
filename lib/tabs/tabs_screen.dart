@@ -5,7 +5,7 @@ import 'package:storage_api/storage_api.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/tabs/cardio_training_list.dart';
 import 'package:triary_app/tabs/power_training_list.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:triary_app/l10n/app_localizations.dart';
 
 class TabsScreen extends StatelessWidget {
   const TabsScreen({super.key});
