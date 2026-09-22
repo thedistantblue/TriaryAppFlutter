@@ -29,8 +29,8 @@
 - `exercise`: id (PK), name, category_id (FK).
 - `exercise_set`: id (PK), name (unique), description, is_current.
 - `exercise_set_item`: id (PK), exercise_set_id (FK), exercise_id (FK), position, is_deleted.
-- `workout`: id (PK), name, description, date (nullable), exercise_set_id (FK nullable).
-- `workout_approach`: id (PK), workout_id (FK), exercise_id (FK), position, reps, weight, source.
+- `power_training`: id (PK), name, description, date (nullable), exercise_set_id (FK nullable).
+- `power_training_approach`: id (PK), power_training_id (FK), exercise_id (FK), position, reps, weight, source.
 
 `source` подхода (`manual` | `applied`) реализует цветовое различие применённых/добавленных значений.
 
@@ -46,14 +46,14 @@
 В наброске обсуждаются showModalBottomSheet vs ExpansionTile. Выбираем раскрытие карточки подхода (ExpansionTile): таймер и информация остаются привязанными к подходу, нет проблемы «закрыл шторку — сломал состояние» (набросок прямо указывает на эту сложность). Таймер работает в bloc (Timer), не в шторке.
 
 ### 5. Отдельные bloc на область
-Вместо одного разросшегося PowerTrainingBloc — отдельные bloc: ExerciseCatalogBloc, ExerciseSetBloc, WorkoutBloc, WorkoutExecutionBloc. Каждый под свою фичу, общие репозитории через Provider DI.
+Вместо одного разросшегося PowerTrainingBloc — отдельные bloc: ExerciseCatalogBloc, ExerciseSetBloc, расширенный PowerTrainingBloc, PowerTrainingExecutionBloc. Каждый под свою фичу, общие репозитории через Provider DI.
 
 ### 6. Сущности — UUID на репозитории
 ID генерируются в репозитории через существующий UuidGenerator (как сейчас у PowerTraining), сущности иммутабельны (copyWith).
 
 ## Risks / Trade-offs
 
-- [Миграция существующих записей] → старые PowerTraining (только name+description) переносятся в workout с date=null и без набора; остаются в списке, но без подходов. Потерь нет.
+- [Миграция существующих записей] → старые PowerTraining (только name+description) остаются в power_training с date=null и без набора; остаются в списке, но без подходов. Потерь нет.
 - [Уникальность названий] → unique-индексы в БД + проверка перед вставкой в репозитории; ошибка ловится и показывается сообщением.
 - [Таймер/фоновая работа] → таймер только на активном экране выполнения, без фоновой службы (в наброске не требуется).
 - [Большой объём] → чейндж реализуется поэтапно (tasks.md), каждый этап компилируется отдельно.
@@ -61,10 +61,9 @@ ID генерируются в репозитории через существ�
 ## Migration Plan
 
 schemaVersion 2 → 3:
-1. Создать новые таблицы (category, exercise, exercise_set, exercise_set_item, workout, workout_approach).
-2. Скопировать строки `power_training_table` (id, data.name, data.description) в `workout` (id, name, description, date=null, exercise_set_id=null).
-3. Удалить `power_training_table`.
-4. Откат не предусмотрен — данные локальные, схема мигрирует вперёд.
+1. Создать новые таблицы (category, exercise, exercise_set, exercise_set_item, power_training_approach).
+2. Перестроить `power_training_table`: вместо колонки data (JSON) — колонки name, description, date, exercise_set_id; перенести name/description из существующего JSON.
+3. Откат не предусмотрен — данные локальные, схема мигрирует вперёд.
 
 ## Open Questions
 
