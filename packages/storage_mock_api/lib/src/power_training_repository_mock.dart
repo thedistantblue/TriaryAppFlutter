@@ -8,10 +8,10 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
   PowerTrainingRepositoryMock(this._uuidGenerator);
 
   @override
-  PowerTraining create(PowerTraining training) {
-    training.id = _uuidGenerator.generateUuid();
-    _idToTrainingMap[training.id] = training;
-    return training;
+  Future<PowerTraining> create(PowerTraining training) async {
+    final persisted = training.copyWith(id: _uuidGenerator.generateUuid());
+    _idToTrainingMap[persisted.id] = persisted;
+    return persisted;
   }
 
   @override
@@ -45,9 +45,8 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
   }
 
   @override
-  Future<PowerTraining?> deleteById(String id) {
-    return Future.delayed(
-        const Duration(milliseconds: 2),
-            () => _idToTrainingMap.remove(id));
+  Future<void> deleteById(String id) async {
+    await Future.delayed(const Duration(milliseconds: 2));
+    _idToTrainingMap.remove(id);
   }
 }

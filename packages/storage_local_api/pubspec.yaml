@@ -2,26 +2,24 @@ name: storage_local_api
 description: A Very Good Project created by Very Good CLI.
 version: 0.1.0+1
 publish_to: none
+resolution: workspace
 
 environment:
-  sdk: "^3.3.0"
+  sdk: ^3.13.0
 
 dependencies:
-  meta: ^1.7.0
-  uuid: ^4.3.2
-  entity:
-    path: ../entity
-  storage_api:
-    path: ../storage_api
-  drift: ^2.16.0
-  sqlite3_flutter_libs: ^0.5.0
-  sqlite3: ^2.4.0
-  path: ^1.9.0
-  path_provider: ^2.0.0
+  meta: ^1.19.0
+  uuid: ^4.6.0
+  entity: any
+  storage_api: any
+  drift: ^2.35.0
+  sqlite3: ^3.6.0
+  path: ^1.9.1
+  path_provider: ^2.1.6
 
 dev_dependencies:
-  mocktail: ^1.0.3
-  test: ^1.25.2
-  very_good_analysis: ^5.1.0
-  drift_dev: ^2.16.0
-  build_runner: ^2.4.8
+  mocktail: ^1.0.5
+  test: 1.31.1
+  very_good_analysis: ^11.0.0
+  drift_dev: ^2.35.0
+  build_runner: ^2.16.1

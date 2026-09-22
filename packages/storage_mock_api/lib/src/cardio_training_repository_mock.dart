@@ -8,7 +8,7 @@ class CardioTrainingRepositoryMock implements BaseCardioTrainingRepository {
   CardioTrainingRepositoryMock(this._uuidGenerator);
 
   @override
-  CardioTraining create(CardioTraining powerTraining) {
+  Future<CardioTraining> create(CardioTraining powerTraining) {
     // TODO: implement create
     throw UnimplementedError();
   }
@@ -32,7 +32,7 @@ class CardioTrainingRepositoryMock implements BaseCardioTrainingRepository {
   }
 
   @override
-  Future<CardioTraining?> deleteById(String id) {
+  Future<void> deleteById(String id) {
     // TODO: implement deleteById
     throw UnimplementedError();
   }
