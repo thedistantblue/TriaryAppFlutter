@@ -2,4 +2,9 @@
 library;
 
 export 'src/training/cardio_training.dart';
+export 'src/training/category.dart';
+export 'src/training/exercise.dart';
+export 'src/training/exercise_set.dart';
+export 'src/training/exercise_set_item.dart';
 export 'src/training/power_training.dart';
+export 'src/training/power_training_approach.dart';

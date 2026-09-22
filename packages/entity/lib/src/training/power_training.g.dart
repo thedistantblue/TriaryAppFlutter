@@ -11,6 +11,10 @@ PowerTraining _$PowerTrainingFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String? ?? '',
       name: json['name'] as String,
       description: json['description'] as String,
+      date: json['date'] == null
+          ? null
+          : DateTime.parse(json['date'] as String),
+      exerciseSetId: json['exerciseSetId'] as String?,
     );
 
 Map<String, dynamic> _$PowerTrainingToJson(PowerTraining instance) =>
@@ -18,4 +22,6 @@ Map<String, dynamic> _$PowerTrainingToJson(PowerTraining instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'date': instance.date?.toIso8601String(),
+      'exerciseSetId': instance.exerciseSetId,
     };

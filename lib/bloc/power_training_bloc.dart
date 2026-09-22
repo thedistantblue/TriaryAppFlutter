@@ -1,8 +1,6 @@
-import 'dart:async';
-
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:entity/entity.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:storage_api/storage_api.dart';
 
 part 'power_training_event.dart';
@@ -23,19 +21,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     PowerTrainingFetched event,
     Emitter<PowerTrainingState> emit,
   ) async {
-    try {
-      if (state.status == PowerTrainingStatus.initial) {
-        await emit.forEach(
-          _repository.findAll(),
-          onData: (trainings) => state.copyWith(
-            status: PowerTrainingStatus.success,
-            powerTrainings: trainings.toList(),
-          ),
-        );
-      }
-    } catch (_) {
-      emit(state.copyWith(status: PowerTrainingStatus.failure));
-    }
+    await _reload(emit);
   }
 
   Future<void> _onTrainingCreated(
@@ -44,6 +30,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
   ) async {
     try {
       await _repository.create(event.training);
+      await _reload(emit);
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
@@ -55,6 +42,7 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
   ) async {
     try {
       await _repository.deleteById(event.training.id);
+      await _reload(emit);
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }
@@ -64,12 +52,18 @@ class PowerTrainingBloc extends Bloc<PowerTrainingEvent, PowerTrainingState> {
     PowerTrainingChanged event,
     Emitter<PowerTrainingState> emit,
   ) async {
+    await _reload(emit);
+  }
+
+  Future<void> _reload(Emitter<PowerTrainingState> emit) async {
     try {
-      // final trainings = await _repository.findAll();
-      // return emit(state.copyWith(
-      //   status: PowerTrainingStatus.success,
-      //   powerTrainings: trainings.toList(),
-      // ));
+      final trainings = (await _repository.findAllSortedByDate()).toList();
+      emit(
+        state.copyWith(
+          status: PowerTrainingStatus.success,
+          powerTrainings: trainings,
+        ),
+      );
     } catch (_) {
       emit(state.copyWith(status: PowerTrainingStatus.failure));
     }

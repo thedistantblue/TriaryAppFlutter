@@ -4,7 +4,6 @@ import 'package:storage_api/storage_api.dart';
 import 'package:storage_local_api/local_storage_api.dart';
 import 'package:triary_app/login/login_screen.dart';
 import 'package:triary_app/main_screen.dart';
-import 'package:triary_app/tabs/power/pt_details.dart';
 import 'package:triary_app/tabs/tabs_screen.dart';
 import 'package:uuid/uuid.dart';
 import 'package:triary_app/l10n/app_localizations.dart';
@@ -25,6 +24,18 @@ void main() async {
               Provider.of<UuidGenerator>(context, listen: false), dataBase)),
       Provider<BaseCardioTrainingRepository>(
           create: (context) => CardioTrainingRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BaseCategoryRepository>(
+          create: (context) => CategoryRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BaseExerciseRepository>(
+          create: (context) => ExerciseRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BaseExerciseSetRepository>(
+          create: (context) => ExerciseSetRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BasePowerTrainingApproachRepository>(
+          create: (context) => PowerTrainingApproachRepository(
               Provider.of<UuidGenerator>(context, listen: false), dataBase)),
     ],
     child: const MyApp(),
@@ -74,7 +85,6 @@ class MyApp extends StatelessWidget {
       routes: {
         "/tabs": (context) => const TabsScreen(),
         "/login": (context) => const LoginScreen(),
-        "/pt_details": (context) => const PtDetailsScreen()
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

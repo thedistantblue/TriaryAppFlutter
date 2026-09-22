@@ -193,6 +193,252 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create'**
   String get create;
+
+  /// No description provided for @addCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category'**
+  String get addCategory;
+
+  /// No description provided for @addSubcategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add subcategory'**
+  String get addSubcategory;
+
+  /// No description provided for @addExercise.
+  ///
+  /// In en, this message translates to:
+  /// **'Add exercise'**
+  String get addExercise;
+
+  /// No description provided for @addSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Add set'**
+  String get addSet;
+
+  /// No description provided for @currentSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Current'**
+  String get currentSet;
+
+  /// No description provided for @categoryDeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Category deletion'**
+  String get categoryDeletion;
+
+  /// No description provided for @categoryDeletionText.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete category'**
+  String get categoryDeletionText;
+
+  /// No description provided for @exerciseDeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Exercise deletion'**
+  String get exerciseDeletion;
+
+  /// No description provided for @exerciseDeletionText.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete exercise'**
+  String get exerciseDeletionText;
+
+  /// No description provided for @setDeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Set deletion'**
+  String get setDeletion;
+
+  /// No description provided for @setDeletionText.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete set'**
+  String get setDeletionText;
+
+  /// No description provided for @emptyNameError.
+  ///
+  /// In en, this message translates to:
+  /// **'Name cannot be empty'**
+  String get emptyNameError;
+
+  /// No description provided for @nameExistsError.
+  ///
+  /// In en, this message translates to:
+  /// **'This name already exists'**
+  String get nameExistsError;
+
+  /// No description provided for @entityInUseError.
+  ///
+  /// In en, this message translates to:
+  /// **'Cannot delete: item is in use'**
+  String get entityInUseError;
+
+  /// No description provided for @exercisesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'exercises'**
+  String get exercisesCount;
+
+  /// No description provided for @addApproach.
+  ///
+  /// In en, this message translates to:
+  /// **'Add approach'**
+  String get addApproach;
+
+  /// No description provided for @reps.
+  ///
+  /// In en, this message translates to:
+  /// **'Reps'**
+  String get reps;
+
+  /// No description provided for @weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight'**
+  String get weight;
+
+  /// No description provided for @rest.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest'**
+  String get rest;
+
+  /// No description provided for @restTimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest timer'**
+  String get restTimer;
+
+  /// No description provided for @startRest.
+  ///
+  /// In en, this message translates to:
+  /// **'Start rest'**
+  String get startRest;
+
+  /// No description provided for @nextExercise.
+  ///
+  /// In en, this message translates to:
+  /// **'Next exercise'**
+  String get nextExercise;
+
+  /// No description provided for @finishTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish training'**
+  String get finishTraining;
+
+  /// No description provided for @finishTrainingText.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish training?'**
+  String get finishTrainingText;
+
+  /// No description provided for @seconds.
+  ///
+  /// In en, this message translates to:
+  /// **'sec'**
+  String get seconds;
+
+  /// No description provided for @previousRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous records'**
+  String get previousRecords;
+
+  /// No description provided for @allTrainings.
+  ///
+  /// In en, this message translates to:
+  /// **'All trainings'**
+  String get allTrainings;
+
+  /// No description provided for @currentTrainingOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'This training only'**
+  String get currentTrainingOnly;
+
+  /// No description provided for @apply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get apply;
+
+  /// No description provided for @statistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statistics;
+
+  /// No description provided for @completedExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed exercises'**
+  String get completedExercises;
+
+  /// No description provided for @trainingSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Set'**
+  String get trainingSet;
+
+  /// No description provided for @deletedFromSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from set'**
+  String get deletedFromSet;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @inProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get inProgress;
+
+  /// No description provided for @newestFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Newest first'**
+  String get newestFirst;
+
+  /// No description provided for @oldestFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Oldest first'**
+  String get oldestFirst;
+
+  /// No description provided for @appliedApproach.
+  ///
+  /// In en, this message translates to:
+  /// **'Applied'**
+  String get appliedApproach;
+
+  /// No description provided for @manualApproach.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual'**
+  String get manualApproach;
+
+  /// No description provided for @noSet.
+  ///
+  /// In en, this message translates to:
+  /// **'No set'**
+  String get noSet;
+
+  /// No description provided for @noPreviousRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'No previous records'**
+  String get noPreviousRecords;
 }
 
 class _AppLocalizationsDelegate
