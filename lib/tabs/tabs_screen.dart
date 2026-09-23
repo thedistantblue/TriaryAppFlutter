@@ -33,11 +33,17 @@ class TabsScreen extends StatelessWidget {
             tabs: [
               Tab(
                 icon: const Icon(Icons.fitness_center),
-                text: AppLocalizations.of(context)!.powerTraining,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(AppLocalizations.of(context)!.powerTraining),
+                ),
               ),
               Tab(
                 icon: const Icon(Icons.directions_run),
-                text: AppLocalizations.of(context)!.cardioTraining,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(AppLocalizations.of(context)!.cardioTraining),
+                ),
               ),
             ],
           ),
