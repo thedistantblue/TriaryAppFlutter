@@ -72,6 +72,9 @@ dev_dependencies:
   melos: ^8.8.0
 
 melos:
+  ide:
+    intellij:
+      enabled: false
   scripts:
     codegen:
       description: Прогнать build_runner во всех пакетах, где он есть
