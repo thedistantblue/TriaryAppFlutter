@@ -14,5 +14,13 @@
   "cardioTraining": "Cardio training",
   "name": "Name",
   "description": "Description",
-  "create": "Create"
+  "create": "Create",
+  "trainingDeleted": "{name} deleted",
+  "@trainingDeleted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
 }

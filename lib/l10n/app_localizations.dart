@@ -193,6 +193,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Create'**
   String get create;
+
+  /// No description provided for @trainingDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} deleted'**
+  String trainingDeleted(String name);
 }
 
 class _AppLocalizationsDelegate

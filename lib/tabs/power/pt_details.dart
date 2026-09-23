@@ -6,48 +6,50 @@ class PtDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.powerTrainingDetails),
+        title: Text(l10n.powerTrainingDetails),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.exercises,
-                  style: const TextStyle(fontSize: 20),
-                ),
-                const Icon(Icons.arrow_forward_outlined),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.exercisesSets,
-                  style: const TextStyle(fontSize: 20),
-                ),
-                const Icon(Icons.arrow_forward_outlined),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.dates,
-                  style: const TextStyle(fontSize: 20),
-                ),
-                const Icon(Icons.arrow_forward_outlined),
-              ],
-            )
-          ],
-        ),
+      body: ListView(
+        children: [
+          const Divider(height: 1),
+          _DetailTile(
+            icon: Icons.fitness_center,
+            title: l10n.exercises,
+          ),
+          const Divider(height: 1),
+          _DetailTile(
+            icon: Icons.format_list_numbered,
+            title: l10n.exercisesSets,
+          ),
+          const Divider(height: 1),
+          _DetailTile(
+            icon: Icons.calendar_today,
+            title: l10n.dates,
+          ),
+          const Divider(height: 1),
+        ],
       ),
+    );
+  }
+}
+
+class _DetailTile extends StatelessWidget {
+  const _DetailTile({
+    required this.icon,
+    required this.title,
+  });
+
+  final IconData icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      trailing: const Icon(Icons.chevron_right),
     );
   }
 }

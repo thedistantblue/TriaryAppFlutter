@@ -56,4 +56,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get create => 'Create';
+
+  @override
+  String trainingDeleted(String name) {
+    return '$name deleted';
+  }
 }

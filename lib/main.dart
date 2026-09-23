@@ -40,34 +40,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TriaryApp',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: Color(0xFF48CAA0),
-          onPrimary: Colors.black54,
-          secondary: Color(0xFF48CAA0),
-          onSecondary: Colors.black54,
-          error: Colors.red,
-          onError: Colors.black54,
-          background: Color(0xFF212730),
-          onBackground: Colors.grey,
-          surface: Color(0xFF373D46),
-          onSurface: Colors.grey,
-          surfaceTint: Color(0xFF373D46),
+          onPrimary: Color(0xFF0A1F18),
+          secondary: Color(0xFF7CC7E8),
+          onSecondary: Color(0xFF0A1A24),
+          error: Color(0xFFFF6B6B),
+          onError: Color(0xFF2B0A0A),
+          background: Color(0xFF131720),
+          onBackground: Color(0xFFE5E9EF),
+          surface: Color(0xFF1C2129),
+          onSurface: Color(0xFFE5E9EF),
+          surfaceTint: Color(0xFF1C2129),
+          onSurfaceVariant: Color(0xFF9AA3AE),
+          outline: Color(0xFF3A424E),
         ),
         useMaterial3: true,
       ),

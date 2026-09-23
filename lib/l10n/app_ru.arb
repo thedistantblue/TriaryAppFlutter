@@ -14,5 +14,13 @@
   "cardioTraining": "Кардио тренировки",
   "name": "Имя",
   "description": "Описание",
-  "create": "Создать"
+  "create": "Создать",
+  "trainingDeleted": "Удалено: {name}",
+  "@trainingDeleted": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
 }

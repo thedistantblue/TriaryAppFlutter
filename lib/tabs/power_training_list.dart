@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:triary_app/bloc/power_training_bloc.dart';
 import 'package:triary_app/widgets/name_description_widget.dart';
+import 'package:triary_app/widgets/power_training_card.dart';
 import 'package:triary_app/l10n/app_localizations.dart';
 
 class PowerTrainingList extends StatefulWidget {
@@ -19,60 +20,54 @@ class _PowerTrainingListState extends State<PowerTrainingList> {
       builder: (context, state) {
         return Scaffold(
           body: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             child: Scrollbar(
               child: ListView.builder(
                 itemCount: state.powerTrainings.length,
                 itemBuilder: (context, index) {
                   final training = state.powerTrainings[index];
-                  return GestureDetector(
-                    child: SizedBox(
-                      height: 100,
-                      child: Dismissible(
-                        key: Key(training.id),
-                        onDismissed: (direction) {
-                          context
-                              .read<PowerTrainingBloc>()
-                              .add(PowerTrainingDeleted(training));
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Center(
-                                child: Text('${training.name} deleted'),
-                              ),
-                            ),
-                          );
-                        },
-                        background: const Card(
-                          color: Colors.red,
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.delete,
-                                size: 40,
-                                color: Color(0xffffffff),
-                              ),
-                            ],
-                          ),
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Dismissible(
+                      key: Key(training.id),
+                      direction: DismissDirection.startToEnd,
+                      background: Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.error,
+                          borderRadius: BorderRadius.circular(16),
                         ),
-                        confirmDismiss: (a) {
-                          return deleteTrainingDialog(context, training);
-                        },
-                        direction: DismissDirection.startToEnd,
-                        child: SizedBox.expand(
-                          child: Card(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(training.name),
-                                Text(training.description),
-                              ],
-                            ),
-                          ),
+                        alignment: Alignment.centerLeft,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Icon(
+                          Icons.delete,
+                          color: Theme.of(context).colorScheme.onError,
                         ),
                       ),
+                      confirmDismiss: (direction) {
+                        return deleteTrainingDialog(context, training);
+                      },
+                      onDismissed: (direction) {
+                        context
+                            .read<PowerTrainingBloc>()
+                            .add(PowerTrainingDeleted(training));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Center(
+                              child: Text(
+                                AppLocalizations.of(context)!
+                                    .trainingDeleted(training.name),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: PowerTrainingCard(
+                        name: training.name,
+                        description: training.description,
+                        onTap: () =>
+                            Navigator.of(context).pushNamed("/pt_details"),
+                      ),
                     ),
-                    onTap: () => Navigator.of(context).pushNamed("/pt_details"),
                   );
                 },
               ),

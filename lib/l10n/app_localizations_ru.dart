@@ -57,4 +57,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get create => 'Создать';
+
+  @override
+  String trainingDeleted(String name) {
+    return 'Удалено: $name';
+  }
 }

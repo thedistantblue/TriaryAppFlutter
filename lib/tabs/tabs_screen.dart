@@ -19,7 +19,17 @@ class TabsScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          title: const Text("TriaryApp"),
           bottom: TabBar(
+            indicatorSize: TabBarIndicatorSize.label,
+            indicator: BoxDecoration(
+              color: const Color(0x2648CAA0),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            labelColor: Theme.of(context).colorScheme.primary,
+            unselectedLabelColor:
+                Theme.of(context).colorScheme.onSurfaceVariant,
+            dividerColor: Colors.transparent,
             tabs: [
               Tab(
                 icon: const Icon(Icons.fitness_center),
@@ -28,10 +38,9 @@ class TabsScreen extends StatelessWidget {
               Tab(
                 icon: const Icon(Icons.directions_run),
                 text: AppLocalizations.of(context)!.cardioTraining,
-              )
+              ),
             ],
           ),
-          title: const Text("TriaryApp"),
         ),
         body: TabBarView(
           children: [
