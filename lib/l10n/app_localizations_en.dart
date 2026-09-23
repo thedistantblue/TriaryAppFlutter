@@ -58,6 +58,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get create => 'Create';
 
   @override
+  String get noTrainings => 'No trainings yet';
+
+  @override
+  String get noTrainingsHint =>
+      'Tap the add button to create your first training';
+
+  @override
+  String get nameRequired => 'Name is required';
+
+  @override
   String trainingDeleted(String name) {
     return '$name deleted';
   }

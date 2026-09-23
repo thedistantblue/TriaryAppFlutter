@@ -15,6 +15,9 @@
   "name": "Имя",
   "description": "Описание",
   "create": "Создать",
+  "noTrainings": "Пока нет тренировок",
+  "noTrainingsHint": "Нажмите «Добавить тренировку», чтобы создать первую",
+  "nameRequired": "Укажите название",
   "trainingDeleted": "Удалено: {name}",
   "@trainingDeleted": {
     "placeholders": {

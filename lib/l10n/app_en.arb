@@ -15,6 +15,9 @@
   "name": "Name",
   "description": "Description",
   "create": "Create",
+  "noTrainings": "No trainings yet",
+  "noTrainingsHint": "Tap the add button to create your first training",
+  "nameRequired": "Name is required",
   "trainingDeleted": "{name} deleted",
   "@trainingDeleted": {
     "placeholders": {

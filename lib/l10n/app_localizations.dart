@@ -194,6 +194,24 @@ abstract class AppLocalizations {
   /// **'Create'**
   String get create;
 
+  /// No description provided for @noTrainings.
+  ///
+  /// In en, this message translates to:
+  /// **'No trainings yet'**
+  String get noTrainings;
+
+  /// No description provided for @noTrainingsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the add button to create your first training'**
+  String get noTrainingsHint;
+
+  /// No description provided for @nameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Name is required'**
+  String get nameRequired;
+
   /// No description provided for @trainingDeleted.
   ///
   /// In en, this message translates to:

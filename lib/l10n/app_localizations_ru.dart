@@ -59,6 +59,16 @@ class AppLocalizationsRu extends AppLocalizations {
   String get create => 'Создать';
 
   @override
+  String get noTrainings => 'Пока нет тренировок';
+
+  @override
+  String get noTrainingsHint =>
+      'Нажмите «Добавить тренировку», чтобы создать первую';
+
+  @override
+  String get nameRequired => 'Укажите название';
+
+  @override
   String trainingDeleted(String name) {
     return 'Удалено: $name';
   }
