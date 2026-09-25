@@ -40,6 +40,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TriaryApp',
       theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xFF131720),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF1C2129),
+          foregroundColor: Color(0xFFE5E9EF),
+          surfaceTintColor: Color(0xFF1C2129),
+        ),
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: Color(0xFF48CAA0),
@@ -55,6 +61,15 @@ class MyApp extends StatelessWidget {
           surfaceTint: Color(0xFF1C2129),
           onSurfaceVariant: Color(0xFF9AA3AE),
           outline: Color(0xFF3A424E),
+          surfaceVariant: Color(0xFF1C2129),
+          outlineVariant: Color(0xFF3A424E),
+          surfaceContainerLowest: Color(0xFF131720),
+          surfaceContainerLow: Color(0xFF1C2129),
+          surfaceContainer: Color(0xFF1C2129),
+          surfaceContainerHigh: Color(0xFF1C2129),
+          surfaceContainerHighest: Color(0xFF1C2129),
+          surfaceBright: Color(0xFF1C2129),
+          surfaceDim: Color(0xFF131720),
         ),
         useMaterial3: true,
       ),
