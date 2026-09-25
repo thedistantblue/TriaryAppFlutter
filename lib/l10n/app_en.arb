@@ -25,5 +25,36 @@
         "type": "String"
       }
     }
+  },
+  "startTraining": "Start training",
+  "changeSet": "Change exercise set",
+  "chooseSet": "Choose exercise set",
+  "previousTrainings": "Previous workouts",
+  "edit": "Edit",
+  "start": "Start",
+  "exercisesCount": "{count, plural, one{exercise} other{exercises}}",
+  "@exercisesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "setsCount": "{count, plural, one{set} other{sets}}",
+  "@setsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesShort": "min",
+  "moreExercises": "and {count, plural, one{# more exercise} other{# more exercises}}",
+  "@moreExercises": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

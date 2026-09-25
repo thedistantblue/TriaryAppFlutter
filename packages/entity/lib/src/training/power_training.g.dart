@@ -11,6 +11,7 @@ PowerTraining _$PowerTrainingFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String? ?? '',
       name: json['name'] as String,
       description: json['description'] as String,
+      setId: json['setId'] as String? ?? '',
     );
 
 Map<String, dynamic> _$PowerTrainingToJson(PowerTraining instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$PowerTrainingToJson(PowerTraining instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'setId': instance.setId,
     };

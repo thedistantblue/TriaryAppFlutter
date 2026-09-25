@@ -22,6 +22,12 @@ class PowerTrainingRepositoryMock implements BasePowerTrainingRepository{
   }
 
   @override
+  Future<void> update(PowerTraining training) async {
+    await Future.delayed(const Duration(milliseconds: 2));
+    _idToTrainingMap[training.id] = training;
+  }
+
+  @override
   Stream<Iterable<PowerTraining>> findAll() {
     // TODO: implement findAll
     throw UnimplementedError();

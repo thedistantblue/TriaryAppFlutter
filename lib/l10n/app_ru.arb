@@ -25,5 +25,36 @@
         "type": "String"
       }
     }
+  },
+  "startTraining": "Начать тренировку",
+  "changeSet": "Сменить набор упражнений",
+  "chooseSet": "Выбрать набор упражнений",
+  "previousTrainings": "Предыдущие тренировки",
+  "edit": "Редактировать",
+  "start": "Начать",
+  "exercisesCount": "{count, plural, one{упражнение} few{упражнения} many{упражнений} other{упражнения}}",
+  "@exercisesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "setsCount": "{count, plural, one{подход} few{подхода} many{подходов} other{подхода}}",
+  "@setsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesShort": "мин",
+  "moreExercises": "и ещё {count, plural, one{# упражнение} few{# упражнения} many{# упражнений} other{# упражнения}}",
+  "@moreExercises": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

@@ -217,6 +217,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} deleted'**
   String trainingDeleted(String name);
+
+  /// No description provided for @startTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'Start training'**
+  String get startTraining;
+
+  /// No description provided for @changeSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Change exercise set'**
+  String get changeSet;
+
+  /// No description provided for @chooseSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose exercise set'**
+  String get chooseSet;
+
+  /// No description provided for @previousTrainings.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous workouts'**
+  String get previousTrainings;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @start.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get start;
+
+  /// No description provided for @exercisesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{exercise} other{exercises}}'**
+  String exercisesCount(int count);
+
+  /// No description provided for @setsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{set} other{sets}}'**
+  String setsCount(int count);
+
+  /// No description provided for @minutesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'min'**
+  String get minutesShort;
+
+  /// No description provided for @moreExercises.
+  ///
+  /// In en, this message translates to:
+  /// **'and {count, plural, one{# more exercise} other{# more exercises}}'**
+  String moreExercises(int count);
 }
 
 class _AppLocalizationsDelegate

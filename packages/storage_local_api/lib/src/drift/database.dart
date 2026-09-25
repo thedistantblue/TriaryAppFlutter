@@ -15,38 +15,71 @@ final TypeConverter<PowerTraining, String> converter =
     toJson: (powerTraining) => powerTraining.toJson(),
   );
 
+final TypeConverter<Exercise, String> exerciseConverter =
+  TypeConverter.json(
+    fromJson: (json) => Exercise.fromJson(json as Map<String, dynamic>),
+    toJson: (exercise) => exercise.toJson(),
+  );
+
+final TypeConverter<ExerciseSet, String> exerciseSetConverter =
+  TypeConverter.json(
+    fromJson: (json) => ExerciseSet.fromJson(json as Map<String, dynamic>),
+    toJson: (exerciseSet) => exerciseSet.toJson(),
+  );
+
 class PowerTrainingTable extends Table {
   TextColumn get id => text().withLength(min: 0, max: 90)();
   TextColumn get data => text().map(converter)();
+
+  /// Ссылка на выбранный набор упражнений; null — набор не выбран.
+  TextColumn get setId => text().nullable()();
 
   @override
   Set<Column> get primaryKey => {id};
 }
 
-@DriftDatabase(tables: [PowerTrainingTable])
+class ExerciseTable extends Table {
+  TextColumn get id => text().withLength(min: 0, max: 90)();
+  TextColumn get data => text().map(exerciseConverter)();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+class ExerciseSetTable extends Table {
+  TextColumn get id => text().withLength(min: 0, max: 90)();
+  TextColumn get data => text().map(exerciseSetConverter)();
+
+  @override
+  Set<Column> get primaryKey => {id};
+}
+
+/// Связка многие-ко-многим между наборами и упражнениями. Порядок упражнений
+/// внутри набора хранится в колонке position (0..n-1).
+class ExerciseSetLinkTable extends Table {
+  TextColumn get setId => text()();
+  TextColumn get exerciseId => text()();
+  IntColumn get position => integer()();
+
+  @override
+  Set<Column> get primaryKey => {setId, exerciseId};
+}
+
+@DriftDatabase(
+  tables: [
+    PowerTrainingTable,
+    ExerciseTable,
+    ExerciseSetTable,
+    ExerciseSetLinkTable,
+  ],
+)
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
+  /// Схема пересобирается с нуля: миграций нет, onCreate создаёт все таблицы
+  /// сразу в актуальном виде. База прежних сборок не поддерживается.
   @override
-  int get schemaVersion => 2;
-
-  @override
-  MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (m) => m.createAll(),
-        onUpgrade: (m, from, to) async {
-          if (from < 2) {
-            // id становится primary key; SQLite не умеет менять PK через ALTER,
-            // поэтому пересоздаём таблицу, сохраняя данные.
-            await customStatement(
-                'ALTER TABLE power_training_table RENAME TO power_training_table_old');
-            await m.createTable(powerTrainingTable);
-            await customStatement(
-                'INSERT INTO power_training_table (id, data) '
-                'SELECT id, data FROM power_training_table_old');
-            await customStatement('DROP TABLE power_training_table_old');
-          }
-        },
-      );
+  int get schemaVersion => 1;
 }
 
 LazyDatabase _openConnection() {

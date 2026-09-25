@@ -72,4 +72,64 @@ class AppLocalizationsRu extends AppLocalizations {
   String trainingDeleted(String name) {
     return 'Удалено: $name';
   }
+
+  @override
+  String get startTraining => 'Начать тренировку';
+
+  @override
+  String get changeSet => 'Сменить набор упражнений';
+
+  @override
+  String get chooseSet => 'Выбрать набор упражнений';
+
+  @override
+  String get previousTrainings => 'Предыдущие тренировки';
+
+  @override
+  String get edit => 'Редактировать';
+
+  @override
+  String get start => 'Начать';
+
+  @override
+  String exercisesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'упражнения',
+      many: 'упражнений',
+      few: 'упражнения',
+      one: 'упражнение',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String setsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'подхода',
+      many: 'подходов',
+      few: 'подхода',
+      one: 'подход',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get minutesShort => 'мин';
+
+  @override
+  String moreExercises(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '# упражнения',
+      many: '# упражнений',
+      few: '# упражнения',
+      one: '# упражнение',
+    );
+    return 'и ещё $_temp0';
+  }
 }

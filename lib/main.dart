@@ -5,6 +5,7 @@ import 'package:storage_local_api/local_storage_api.dart';
 import 'package:triary_app/login/login_screen.dart';
 import 'package:triary_app/main_screen.dart';
 import 'package:triary_app/tabs/power/pt_details.dart';
+import 'package:triary_app/tabs/power/workout_screen.dart';
 import 'package:triary_app/tabs/tabs_screen.dart';
 import 'package:uuid/uuid.dart';
 import 'package:triary_app/l10n/app_localizations.dart';
@@ -22,6 +23,12 @@ void main() async {
               UuidGenerator(Provider.of<Uuid>(context, listen: false))),
       Provider<BasePowerTrainingRepository>(
           create: (context) => PowerTrainingRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BaseExerciseRepository>(
+          create: (context) => ExerciseRepository(
+              Provider.of<UuidGenerator>(context, listen: false), dataBase)),
+      Provider<BaseExerciseSetRepository>(
+          create: (context) => ExerciseSetRepository(
               Provider.of<UuidGenerator>(context, listen: false), dataBase)),
       Provider<BaseCardioTrainingRepository>(
           create: (context) => CardioTrainingRepository(
@@ -52,6 +59,8 @@ class MyApp extends StatelessWidget {
           onPrimary: Color(0xFF0A1F18),
           secondary: Color(0xFF7CC7E8),
           onSecondary: Color(0xFF0A1A24),
+          tertiary: Color(0xFFA78BFA),
+          onTertiary: Color(0xFF1B1140),
           error: Color(0xFFFF6B6B),
           onError: Color(0xFF2B0A0A),
           background: Color(0xFF131720),
@@ -76,7 +85,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/tabs": (context) => const TabsScreen(),
         "/login": (context) => const LoginScreen(),
-        "/pt_details": (context) => const PtDetailsScreen()
+        "/pt_details": (context) => const PtDetailsScreen(),
+        "/workout": (context) => const WorkoutScreen(),
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
