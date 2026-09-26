@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:entity/entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +12,11 @@ import 'package:triary_app/widgets/exercise_row.dart';
 import 'package:triary_app/widgets/set_card.dart';
 import 'package:triary_app/widgets/set_summary.dart';
 import 'package:triary_app/widgets/workout_style.dart';
+
+/// Предельная доля высоты экрана для шторки полного списка. В макете шторка —
+/// 380 из 780 (≈49%); на низком экране 380 заняло бы слишком много, поэтому
+/// высота ограничивается долей экрана, но не больше макетной.
+const double _sheetHeightShare = 0.55;
 
 /// Экран предстоящей тренировки (борды 09–13 макета).
 class WorkoutScreen extends StatelessWidget {
@@ -323,8 +330,13 @@ class _FullSetSheet extends StatelessWidget {
       (sum, exercise) => sum + exercise.sets,
     );
 
+    final sheetHeight = math.min(
+      WorkoutStyle.sheetHeight,
+      MediaQuery.sizeOf(context).height * _sheetHeightShare,
+    );
+
     return SizedBox(
-      height: WorkoutStyle.sheetHeight,
+      height: sheetHeight,
       child: Column(
         children: [
           Padding(

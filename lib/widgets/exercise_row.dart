@@ -5,6 +5,10 @@ import 'package:triary_app/widgets/workout_style.dart';
 /// Строка упражнения: имя слева, подходы и повторы справа. Одна и та же
 /// строка используется в карточке набора и в шторке полного списка,
 /// отличаются только отступы и врезка разделителя.
+///
+/// Высота строки — минимальная: с обычным системным шрифтом она совпадает
+/// с макетом (48), а при увеличенном масштабе шрифта строка растёт вместе
+/// с текстом вместо того, чтобы его обрезать.
 class ExerciseRow extends StatelessWidget {
   const ExerciseRow({
     super.key,
@@ -33,10 +37,12 @@ class ExerciseRow extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: dividerInset),
             child: Container(height: 1, color: colorScheme.outline),
           ),
-        SizedBox(
-          height: withDivider
-              ? WorkoutStyle.exerciseRowHeight - 1
-              : WorkoutStyle.exerciseRowHeight,
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: withDivider
+                ? WorkoutStyle.exerciseRowHeight - 1
+                : WorkoutStyle.exerciseRowHeight,
+          ),
           child: Padding(
             padding: padding,
             child: Row(

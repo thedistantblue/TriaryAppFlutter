@@ -33,19 +33,21 @@ class SetCard extends StatelessWidget {
         isExpanded ? exercises.take(previewLimit).toList() : const <Exercise>[];
     final hiddenCount = exercises.length - visibleExercises.length;
 
-    return Container(
-      decoration: BoxDecoration(
-        color: colorScheme.surface,
+    return Material(
+      color: colorScheme.surface,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(WorkoutStyle.setCardRadius),
       ),
-      clipBehavior: Clip.antiAlias,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(
             onTap: onToggle,
-            child: SizedBox(
-              height: WorkoutStyle.setHeaderHeight,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                minHeight: WorkoutStyle.setHeaderHeight,
+              ),
               child: Row(
                 children: [
                   const SizedBox(width: 16),
@@ -98,8 +100,10 @@ class _SetFooterRow extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(height: 1, color: colorScheme.outline),
-          SizedBox(
-            height: WorkoutStyle.exerciseRowHeight - 1,
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+              minHeight: WorkoutStyle.exerciseRowHeight - 1,
+            ),
             child: Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Row(
